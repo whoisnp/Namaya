@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="myrow" id="whole">
+      <div id="iyno" class="row">
+        <div id="i121h" class="cell">
+          <img alt="" src="assets/img/Picture1.png" id="i6lu1" />
+        </div>
+        <div id="ip4zi" class="cell">
+          <div id="i3j7u">
+            <u><b>WORLD TRADITIONAL  AND CREATIVE ARTS </b></u>
+            <div>
+              <span><b>&amp;</b></span>
+            </div>
+            <div><u>National Martial Arts &amp; Yoga Fedration </u></div>
+            <div>
+              <span
+                ><b><br /><br /></b
+              ></span>
+            </div>
+          </div>
+        </div>
+        <div id="i7yzn" class="cell">
+          <img alt="" src="assets/img/Picture2.png" id="ivpwj" />
+        </div>
+      </div>
+      <div id="islzc" class="row">
+        <div id="i4om3" class="cell">
+          <div id="i3brg">ADMISSION FORM</div>
+        </div>
+      </div>
+      <div class="row" id="iop5q"></div>
+      <div id="ixjlh" class="row">
+        <div id="i61rg" class="cell">
+          <div class="form-group" id="iy99f">
+            <label class="label" id="iyocd"><u>SI.NO:</u></label
+            ><input class="input" id="sno" />
+          </div>
+          <div class="form-group" id="ie1xf">
+            <label class="label" id="ibb7j"><u>Date:</u></label
+            ><input class="input" id="date" />
+          </div>
+          <form id="i77bw" class="form">
+            <div id="itccm" class="form-group">
+              <label id="i6qky" class="label">Student Name:</label
+              ><input id="name" class="input" />
+            </div>
+            <div id="i0nck" class="form-group">
+              <label id="i9c7d" class="label">Father Name/Gaurdian Name:</label
+              ><input
+                type="text"
+                placeholder=""
+                id="fathername"
+                class="input"
+              />
+            </div>
+            <div id="iwqtt" class="form-group">
+              <label id="iuj61" class="label">Gender</label
+              ><input
+                type="checkbox"
+                value="male"
+                id="male"
+                class="checkbox"
+              /><label id="igvod" class="checkbox-label">Male</label
+              ><input
+                type="checkbox"
+                value="female"
+                id="female"
+                class="checkbox"
+              /><label id="iz2bg" class="checkbox-label">Female</label>
+            </div>
+            <div id="ipqwe" class="form-group">
+              <label id="io26d" class="label">Blood Group:</label
+              ><input type="text" placeholder="" id="bgroup" class="input" />
+            </div>
+            <div id="iglod" class="form-group">
+              <label id="irup8" class="label">Date of Birth:</label
+              ><input type="text" placeholder="" id="dob" class="input" />
+            </div>
+            <div id="id2my" class="form-group">
+              <label id="iqfmf" class="label">Address</label
+              ><textarea id="address" class="textarea"></textarea>
+            </div>
+            <div id="i1399" class="form-group">
+              <label id="ibr2i" class="label">Phone Number:</label
+              ><input type="number" placeholder="" id="number" class="input" />
+            </div>
+            <div class="form-group"></div>
+            <div class="row" id="igxru">
+              <div class="cell" id="i5i2p">
+                <input class="input" id="student" /><label
+                  class="label"
+                  id="im7xx"
+                  >Parent Signture</label
+                >
+              </div>
+              <div class="cell" id="iik3i">
+                <input class="input" id="parent" /><label
+                  class="label"
+                  id="i1uyj"
+                  >Student Signture</label
+                >
+              </div>
+              <div class="cell" id="ilw1f">
+                <input class="input" id="master" /><label
+                  class="label"
+                  id="i3yft"
+                  >Master Signture</label
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+        <div id="invfo" class="cell">
+          <img
+            id="photo"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImZpbGw6IHJnYmEoMCwwLDAsMC4xNSk7IHRyYW5zZm9ybTogc2NhbGUoMC43NSkiPgogICAgICAgIDxwYXRoIGQ9Ik04LjUgMTMuNWwyLjUgMyAzLjUtNC41IDQuNSA2SDVtMTYgMVY1YTIgMiAwIDAgMC0yLTJINWMtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMnoiPjwvcGF0aD4KICAgICAgPC9zdmc+"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyCmJCdJ5y8Px2gn7O6PTq_MxVx30Q4zZDM",
+        authDomain: "projecttkr-4aa57.firebaseapp.com",
+        projectId: "projecttkr-4aa57",
+        storageBucket: "projecttkr-4aa57.appspot.com",
+        messagingSenderId: "353303900963",
+        appId: "1:353303900963:web:6ee6c1e0a0e774c2851296",
+        measurementId: "G-12RFY7K0EN",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      function getData(uid) {
+        firebase
+          .database()
+          .ref("Students/" + uid)
+          .once("value")
+          .then(function (snapshot) {
+            var name = snapshot.val().name;
+            var dob = snapshot.val().dob;
+            var FatherName = snapshot.val().FatherName;
+            var address = snapshot.val().address;
+            var BldGrp = snapshot.val().BldGrp;
+            var Mno = snapshot.val().Mno;
+            var email = snapshot.val().email;
+
+            document.getElementById("name").value = name;
+            document.getElementById("address").value = address;
+          });
+      }
+      var query = location.search;
+      //   console.log(query);
+      var query = location.href.split("?")[1];
+      var params = query.split("&");
+      var id;
+      params.forEach((param, index) => {
+        var key = param.split("=")[0];
+        var value = param.split("=")[1];
+        if (key == "id") {
+          id = value;
+          getData(id);
+        }
+      });
+      //   console.log(id);
+    </script>
+  </body>
+</html>

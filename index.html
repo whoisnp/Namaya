@@ -132,9 +132,9 @@
                 <button id="sumbit" class="btn btn-primary form-btn" type="submit">
                   SAVE</button
                 >
-                <!-- <button class="btn btn-danger form-btn" type="reset">
-                  CANCEL
-                </button> -->
+                <button id="upload" class="btn btn-danger form-btn" >
+                  UPLOAD
+                </button>
               </div>
             </div>
           </div>
@@ -188,6 +188,10 @@
 
       var imagesRef = storageRef.child('images');
       var spaceRef = storageRef.child('images/space.jpg');
+
+      var ImgUrl;
+      var files = [];
+      var reader = new FileReader();
     
       appfrm = document.querySelector("#appfrm");
       appfrm.addEventListener("submit", (e) => {
@@ -201,7 +205,9 @@
         var Mno = document.getElementById("Mno").value;
         var email = document.getElementById("email").value;
         // saveMessage(name, dob, FatherName, gender ,address, BldGrp, Mno, email);
-        console.log(name, dob, FatherName, gender ,address, BldGrp, Mno, email);
+        // var ImUrl =  this.IUrl()
+        
+        
         function radioGender(){
             var Gender = document.querySelector("input[name=gender]:checked").value;
             return Gender;
@@ -229,7 +235,80 @@
           });
           window.location.reload();
         }
-      });
+      }
+      );
+      //   ================================ Image Processing================================
+      /**---------------------------------   selction ---------------------------------- **/
+      document.getElementById("photo").onclick = (e) => {
+          var input = document.getElementById("photo");
+          input.onchange = (e) => {
+              files = e.target.files;
+              reader = new FileReader();
+              reader.onload = () => {
+                  console.log("done");
+              };
+              reader.readAsDataURL(files[0]);
+          };
+          input.click();
+      };
+      
+      /**---------------------------------  uploading ---------------------------------- **/
+    
+    
+        document.getElementById("upload").onclick = () => {
+          ImgName = document.getElementById("name").value;
+          console.log(ImgName)
+          var uploadTask = firebase
+            .storage()
+            .ref("Images/" + ImgName + ".png")
+            .put(files[0]);
+            uploadTask.snapshot.ref.getDownloadURL().then
+            (function (url) {
+                // ImgUrl = url;
+                console.log(url)
+                // console.log(url, name, dob, FatherName, gender ,address, BldGrp, Mno, email);
+                return url
+
+              });
+
+          // uploadTask.on(
+          //   "state_changed",
+          //   function (snapshot) {
+          //     var progress =
+          //       (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          //       console.log(progress)
+          //   },
+          //   (error) => {
+          //     alert(error);
+          //   },
+    
+          //   () => {
+          //     uploadTask.snapshot.ref.getDownloadURL().then
+          //     (function (url) {
+          //       // ImgUrl = url;
+          //       console.log(address)
+          //       console.log(url, name, dob, FatherName, gender ,address, BldGrp, Mno, email);
+          //       return url
+
+          //     });
+          //     // firebase
+          //     //   .database()
+          //     //   .ref("Pictures/" + ImgName)
+          //     //   .set({
+          //     //     Name: ImgName,
+          //     //     Link: ImgUrl,
+          //     //   });
+          //     // alert("Success");
+          //     // console.log(ImgUrl);
+          //   }) ;
+        };
+
+
+ 
+
+
+
+
     </script>
   </body>
 </html>

@@ -1,5 +1,7 @@
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -20,7 +22,7 @@
     <style>
       .navbar {
         min-height: 80px;
-        background-color: darkgreen;
+        background-color: #00aeef;
       }
 
       .custom {
@@ -30,18 +32,74 @@
         font-variant: normal;
         color: yellow;
       }
+      .nav-link {
+        background-color: transparent;
+        border-color: transparent;
+        color: white;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        font-weight: 800(black);
+        font-style: normal;
+        line-height: 1.5em;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+      }
+      .nav-item:hover {
+        background-color:white;
+        color:transparent;
+        border-radius: 50px;
+        
+      }
+      .nav-link:hover {
+        color: #00aeef;
+
+      }
+    
+      /* .navbar-toggler.collapse{
+        color: white;
+        background-color: white;
+      } */
     </style>
   </head>
-
   <body>
-    <nav class="navbar navbar navbar-light">
-      <a class="navbar-brand custom" href="#">Navbar</a>
-
-      <button type="button" onclick="signOut()" class="btn btn-warning ml-2">
-        Sign Out
-      </button>
+    <nav class="navbar navbar-expand-lg navbar-dark static-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+              <img src="https://plusequalz.educationhost.cloud/wp/wp-content/uploads/2017/05/20210227_084745.png" alt="" width="75" height="75">
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="text-white navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Classes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Instructors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="signOut()">Signout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-
+    
     <div class="container py-4">
       <div class="row py-5">
         <div class="col-lg-10 mx-auto">
@@ -102,6 +160,7 @@
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function () {
         var firebaseConfig = {

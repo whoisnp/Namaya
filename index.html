@@ -132,9 +132,9 @@
                 <button id="sumbit" class="btn btn-primary form-btn" type="submit">
                   SAVE</button
                 >
-                <button id="upload" class="btn btn-danger form-btn" >
+                <!-- <button id="upload" class="btn btn-danger form-btn" >
                   UPLOAD
-                </button>
+                </button> -->
               </div>
             </div>
           </div>
@@ -183,6 +183,7 @@
       
       var storage = firebase.storage();
       var storageRef = storage.ref();
+      var picurl ; 
 
       var messagesRef = firebase.database().ref("Students");
 
@@ -195,8 +196,9 @@
     
       appfrm = document.querySelector("#appfrm");
       appfrm.addEventListener("submit", (e) => {
+        // Img()
         e.preventDefault();
-        var name = document.getElementById("name").value;
+        var name = document.getElementById("name").value; 
         var dob = document.getElementById("dob").value;
         var FatherName = document.getElementById("FatherName").value;
         var gender = radioGender();
@@ -205,9 +207,31 @@
         var Mno = document.getElementById("Mno").value;
         var email = document.getElementById("email").value;
         // saveMessage(name, dob, FatherName, gender ,address, BldGrp, Mno, email);
-        // var ImUrl =  this.IUrl()
-        
-        
+        // =====================
+// ImgName = document.getElementById("name").value;
+var uploadTask = firebase
+            .storage()
+            .ref("Images/" + name + ".png")
+            .put(files[0]);
+            uploadTask.snapshot.ref.getDownloadURL().then
+            (function (url) {
+                var picurl =  url
+                console.log(name, dob, FatherName, gender ,address, BldGrp, Mno, email,picurl)
+                saveMessage(name,
+          dob,
+          FatherName,
+          gender,
+          address,
+          BldGrp,
+          Mno,
+          email,
+          picurl)
+
+              });
+
+
+// =====================
+        // console.log(picurl)
         function radioGender(){
             var Gender = document.querySelector("input[name=gender]:checked").value;
             return Gender;
@@ -220,7 +244,8 @@
           address,
           BldGrp,
           Mno,
-          email
+          email,
+          picurl
         ) {
           var newMessageRef = messagesRef.push();
           newMessageRef.set({
@@ -232,6 +257,7 @@
             BldGrp: BldGrp,
             Mno: Mno,
             email: email,
+            picurl: picurl,
           });
           window.location.reload();
         }
@@ -255,21 +281,23 @@
       /**---------------------------------  uploading ---------------------------------- **/
     
     
-        document.getElementById("upload").onclick = () => {
-          ImgName = document.getElementById("name").value;
-          console.log(ImgName)
-          var uploadTask = firebase
-            .storage()
-            .ref("Images/" + ImgName + ".png")
-            .put(files[0]);
-            uploadTask.snapshot.ref.getDownloadURL().then
-            (function (url) {
-                // ImgUrl = url;
-                console.log(url)
-                // console.log(url, name, dob, FatherName, gender ,address, BldGrp, Mno, email);
-                return url
+        // document.getElementById("sumbit").onclick = () => {
+        Img = () => {
+          // ImgName = document.getElementById("name").value;
+          // // console.log(ImgName)
+          // var uploadTask = firebase
+          //   .storage()
+          //   .ref("Images/" + ImgName + ".png")
+          //   .put(files[0]);
+          //   uploadTask.snapshot.ref.getDownloadURL().then
+          //   (function (url) {
+          //       // ImgUrl = url;
+          //       // console.log(url)
+          //       // console.log(url, name, dob, FatherName, gender ,address, BldGrp, Mno, email);
+          //       var picurl =  url
+          //       // return url
 
-              });
+          //     });
 
           // uploadTask.on(
           //   "state_changed",

@@ -1,18 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>ApplicationForm</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/styles.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.min.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="row">
+      <div class="col-lg-12">
+        <div id="issuesList"></div>
+      </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/script.min.js"></script>
-</body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-storage.js"></script>
+    <script src="/assets/js/script.min.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyCmJCdJ5y8Px2gn7O6PTq_MxVx30Q4zZDM",
+        authDomain: "projecttkr-4aa57.firebaseapp.com",
+        projectId: "projecttkr-4aa57",
+        storageBucket: "projecttkr-4aa57.appspot.com",
+        messagingSenderId: "353303900963",
+        appId: "1:353303900963:web:6ee6c1e0a0e774c2851296",
+        measurementId: "G-12RFY7K0EN",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      // var messagesRef = firebase.database().ref("Students");
+      firebase
+        .database()
+        .ref("Students/")
+        .orderByChild("name")
+        .equalTo("Its TKR")
+        .once("value")
+        .then(function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            console.log(childSnapshot.key);
+          });
+        });
+    </script>
+  </body>
 </html>

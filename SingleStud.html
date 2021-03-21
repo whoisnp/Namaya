@@ -1,30 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <title>ApplicationForm</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="/assets/css/styles.min.css" />
-  </head>
 
-  <body>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/styles.min.css" />
+</head>
+<style>
+    #appfrm {
+        /* background-image: url(/assets/img/Picture2.png); */
+        background-position: center;
+        background-size: cover;
+        background-blend-mode: screen;
+        border-color: black;
+        border-style: solid;
+        border-width: 3px;
+        padding-left: 40px;
+        padding-bottom: 20px;
+    }
+    
+    nav {
+        border-radius: 20px;
+    }
+    
+    #pic {
+        display: inline-block;
+        background-color: #00aeef;
+        color: white;
+        padding: 0.5rem;
+        font-family: sans-serif;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        margin-left: 7.6rem;
+    }
+    
+    hr {
+        background-color: #00aeef;
+    }
+    
+    @media only screen and (max-width:600px) {
+        #pic {
+            display: inline-block;
+            background-color: #00aeef;
+            color: white;
+            /* padding: 0.5rem; */
+            font-family: sans-serif;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            margin-left: 0rem;
+        }
+    }
+</style>
+</sty/le>
+
+<body>
     <div class="container profile profile-view" id="profile">
-      <hr />
-      <nav class="navbar navbar-light navbar-expand-md">
-        <div class="container-fluid">
-          <div>
-            <img src="/assets/img/Picture1.png" width="100" height="100" />
-          </div>
-          <h3 class="text-center">
-            <strong
-              ><span style="text-decoration: underline"
+        <hr />
+        <nav class="navbar navbar-light navbar-expand-md">
+            <div class="container-fluid">
+                <div>
+                    <img src="/assets/img/Picture1.png" width="100" height="100" />
+                </div>
+                <h3 class="text-center">
+                    <strong><span style="text-decoration: underline"
                 >World Traditional And Creative Arts Federation&nbsp;</span
               >&amp;&nbsp;<span style="text-decoration: underline"
                 >National Martial Arts &amp; Yoga Association</span
@@ -37,16 +77,50 @@
         </div>
       </nav>
       <hr />
-      <div>
+      <!-- <div>
         <img src="/assets/img/Picture3.png" width="100" height="100" />
         <h4 class="text-center">APPLICATION FORM</h4>
-      </div>
+      </div> -->
       <form id="appfrm">
         <div class="form-row profile-row">
           <div class="col-md-8">
             <h1>Profile</h1>
             <hr />
             <div class="form-row">
+              <div class="col-sm-12 col-md-12">
+                <div class="form-group">
+                  <label>Date of admission :</label
+                  ><input
+                    class="form-control"
+                    id="id"
+                    type="number"
+                    name="id"
+                    style="width: 30%;"
+                  />
+                </div>
+                </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Student ID :</label
+                  ><input
+                    class="form-control"
+                    id="id"
+                    type="number"
+                    name="id"
+                  />
+                </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group">
+                    <label>Student Profession :</label
+                    ><input
+                      class="form-control"
+                      id="profession"
+                      type="text"
+                      name="profession"
+                    />
+                  </div>
+                  </div>
               <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                   <label>Student Name :</label
@@ -125,16 +199,39 @@
                 required=""
                 name="email"
               />
+              <div class="form-group">
+                <label>Achivement :</label
+                ><textarea id="Achivement" class="form-control"></textarea>
+              </div>
             </div>
             <hr />
             <div class="form-row">
-              <div class="col-md-12 content-right">
-                <button id="sumbit" class="btn btn-primary form-btn" type="submit">
-                  SAVE</button
+              <div class="col-md-6 content-left">
+                <a
+                  id="back"
+                  class="btn btn-warning form-btn"
+                  type="back"
+                  href=""
+                  style="color: white;"
                 >
-                <!-- <button id="upload" class="btn btn-danger form-btn" >
-                  UPLOAD
-                </button> -->
+                  Back
+                  </a>
+                
+                <!-- <button class="btn btn-danger form-btn" type="reset">
+                    CANCEL
+                  </button> -->
+              </div>
+              <div class="col-md-6 content-right">
+                <button
+                  id="sumbit"
+                  class="btn btn-primary form-btn"
+                  type="submit"
+                >
+                  Edit
+                
+                <!-- <button class="btn btn-danger form-btn" type="reset">
+                    CANCEL
+                  </button> -->
               </div>
             </div>
           </div>
@@ -143,31 +240,26 @@
               <div class="avatar-bg center"></div>
             </div>
             <input
-            id="photo"
+              id="photo"
               class="form-control-file form-control"
               type="file"
               name="avatar-file"
               accept="image/png, image/jpeg"
+              hidden
             />
+            <lable for="photo" id="pic">Choose File</lable>
           </div>
         </div>
       </form>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/script.min.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-storage.js"></script>
-</body>
     <script>
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       var firebaseConfig = {
         apiKey: "AIzaSyCmJCdJ5y8Px2gn7O6PTq_MxVx30Q4zZDM",
         authDomain: "projecttkr-4aa57.firebaseapp.com",
@@ -180,25 +272,32 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
-      
-      var storage = firebase.storage();
-      var storageRef = storage.ref();
-      var picurl ; 
 
-      var messagesRef = firebase.database().ref("Students");
+      //   console.log(uid);
+      function getData(uid) {
+        firebase
+          .database()
+          .ref("Students/" + uid)
+          .once("value")
+          .then(function (snapshot) {
+            var name = snapshot.val().name;
+            var dob = snapshot.val().dob;
+            var FatherName = snapshot.val().FatherName;
+            var address = snapshot.val().address;
+            var BldGrp = snapshot.val().BldGrp;
+            var Mno = snapshot.val().Mno;
+            var email = snapshot.val().email;
 
-      var imagesRef = storageRef.child('images');
-      var spaceRef = storageRef.child('images/space.jpg');
+            document.getElementById("name").value = name;
+            document.getElementById("address").value = address;
+            document.getElementById("email").value = email;
+          });
+      }
 
-      var ImgUrl;
-      var files = [];
-      var reader = new FileReader();
-    
       appfrm = document.querySelector("#appfrm");
       appfrm.addEventListener("submit", (e) => {
-        // Img()
         e.preventDefault();
-        var name = document.getElementById("name").value; 
+        var name = document.getElementById("name").value;
         var dob = document.getElementById("dob").value;
         var FatherName = document.getElementById("FatherName").value;
         var gender = radioGender();
@@ -207,36 +306,14 @@
         var Mno = document.getElementById("Mno").value;
         var email = document.getElementById("email").value;
         // saveMessage(name, dob, FatherName, gender ,address, BldGrp, Mno, email);
-        // =====================
-// ImgName = document.getElementById("name").value;
-var uploadTask = firebase
-            .storage()
-            .ref("Images/" + name + ".png")
-            .put(files[0]);
-            uploadTask.snapshot.ref.getDownloadURL().then
-            (function (url) {
-                var picurl =  url
-                console.log(name, dob, FatherName, gender ,address, BldGrp, Mno, email,picurl)
-                saveMessage(name,
-          dob,
-          FatherName,
-          gender,
-          address,
-          BldGrp,
-          Mno,
-          email,
-          picurl)
-
-              });
-
-
-// =====================
-        // console.log(picurl)
-        function radioGender(){
-            var Gender = document.querySelector("input[name=gender]:checked").value;
-            return Gender;
+        change(name, dob, FatherName, gender, address, BldGrp, Mno, email);
+        // console.log(name, dob, FatherName, gender, address, BldGrp, Mno, email);
+        function radioGender() {
+          var Gender = document.querySelector("input[name=gender]:checked")
+            .value;
+          return Gender;
         }
-        function saveMessage(
+        function change(
           name,
           dob,
           FatherName,
@@ -244,99 +321,39 @@ var uploadTask = firebase
           address,
           BldGrp,
           Mno,
-          email,
-          picurl
+          email
         ) {
-          var newMessageRef = messagesRef.push();
-          newMessageRef.set({
+          var messagesRef = firebase.database().ref("Students/" + id);
+          //   console.log(id);
+          console.log(name);
+          messagesRef.set({
             name: name,
             dob: dob,
             FatherName: FatherName,
-            gender : gender ,
+            gender: gender,
             address: address,
             BldGrp: BldGrp,
             Mno: Mno,
             email: email,
-            picurl: picurl,
           });
-          window.location.reload();
         }
-      }
-      );
-      //   ================================ Image Processing================================
-      /**---------------------------------   selction ---------------------------------- **/
-      document.getElementById("photo").onclick = (e) => {
-          var input = document.getElementById("photo");
-          input.onchange = (e) => {
-              files = e.target.files;
-              reader = new FileReader();
-              reader.onload = () => {
-                  console.log("done");
-              };
-              reader.readAsDataURL(files[0]);
-          };
-          input.click();
-      };
-      
-      /**---------------------------------  uploading ---------------------------------- **/
-    
-    
-        // document.getElementById("sumbit").onclick = () => {
-        Img = () => {
-          // ImgName = document.getElementById("name").value;
-          // // console.log(ImgName)
-          // var uploadTask = firebase
-          //   .storage()
-          //   .ref("Images/" + ImgName + ".png")
-          //   .put(files[0]);
-          //   uploadTask.snapshot.ref.getDownloadURL().then
-          //   (function (url) {
-          //       // ImgUrl = url;
-          //       // console.log(url)
-          //       // console.log(url, name, dob, FatherName, gender ,address, BldGrp, Mno, email);
-          //       var picurl =  url
-          //       // return url
 
-          //     });
-
-          // uploadTask.on(
-          //   "state_changed",
-          //   function (snapshot) {
-          //     var progress =
-          //       (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          //       console.log(progress)
-          //   },
-          //   (error) => {
-          //     alert(error);
-          //   },
-    
-          //   () => {
-          //     uploadTask.snapshot.ref.getDownloadURL().then
-          //     (function (url) {
-          //       // ImgUrl = url;
-          //       console.log(address)
-          //       console.log(url, name, dob, FatherName, gender ,address, BldGrp, Mno, email);
-          //       return url
-
-          //     });
-          //     // firebase
-          //     //   .database()
-          //     //   .ref("Pictures/" + ImgName)
-          //     //   .set({
-          //     //     Name: ImgName,
-          //     //     Link: ImgUrl,
-          //     //   });
-          //     // alert("Success");
-          //     // console.log(ImgUrl);
-          //   }) ;
-        };
-
-
- 
-
-
-
-
+        window.location.reload();
+      });
+      var query = location.search;
+      //   console.log(query);
+      var query = location.href.split("?")[1];
+      var params = query.split("&");
+      var id;
+      params.forEach((param, index) => {
+        var key = param.split("=")[0];
+        var value = param.split("=")[1];
+        if (key == "id") {
+          id = value;
+          getData(id);
+        }
+      });
+      //   console.log(id);
     </script>
   </body>
 </html>

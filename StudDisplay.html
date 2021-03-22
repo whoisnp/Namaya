@@ -73,7 +73,7 @@
         firebase
           .database()
           .ref("Students/")
-          .orderByChild("name")
+          .orderByChild("Sid")
           .equalTo(Sid)
           .once("value")
           .then(function (snapshot) {

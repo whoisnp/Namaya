@@ -193,6 +193,7 @@
       var ImgUrl;
       var files = [];
       var reader = new FileReader();
+      var Achivement = "";
     
       appfrm = document.querySelector("#appfrm");
       appfrm.addEventListener("submit", (e) => {
@@ -225,9 +226,9 @@ var uploadTask = firebase
           BldGrp,
           Mno,
           email,
-          picurl)
-
-              });
+          picurl,
+          Achivement
+          )});
 
 
 // =====================
@@ -245,7 +246,8 @@ var uploadTask = firebase
           BldGrp,
           Mno,
           email,
-          picurl
+          picurl,
+          Achivement
         ) {
           var newMessageRef = messagesRef.push();
           newMessageRef.set({
@@ -258,6 +260,7 @@ var uploadTask = firebase
             Mno: Mno,
             email: email,
             picurl: picurl,
+            Achivement:Achivement,
           });
           window.location.reload();
         }

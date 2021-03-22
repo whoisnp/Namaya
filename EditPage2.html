@@ -92,9 +92,9 @@
                   <label>Date of admission :</label
                   ><input
                     class="form-control"
-                    id="id"
-                    type="number"
-                    name="id"
+                    id="doa"
+                    type="date"
+                    name="doa"
                     style="width: 30%;"
                   />
                 </div>
@@ -115,7 +115,7 @@
                     <label>Student Profession :</label
                     ><input
                       class="form-control"
-                      id="profession"
+                      id="StudRole"
                       type="text"
                       name="profession"
                     />
@@ -236,18 +236,19 @@
             </div>
           </div>
           <div class="col-md-4 relative">
-            <div class="avatar">
+            <!-- <div class="avatar">
               <div class="avatar-bg center"></div>
-            </div>
-            <input
+            </div> -->
+            <img id="myimg" src="" alt="Student Image" height="200" width="200">
+            <!-- <input
               id="photo"
               class="form-control-file form-control"
               type="file"
               name="avatar-file"
               accept="image/png, image/jpeg"
               hidden
-            />
-            <lable for="photo" id="pic">Choose File</lable>
+            /> -->
+            <!-- <lable for="photo" id="pic">Choose File</lable> -->
           </div>
         </div>
       </form>
@@ -280,6 +281,9 @@
           .ref("Students/" + uid)
           .once("value")
           .then(function (snapshot) {
+            var doa = snapshot.val().doa;
+            var Sid = snapshot.val().Sid;
+            var StudRole = snapshot.val().StudRole;
             var name = snapshot.val().name;
             var dob = snapshot.val().dob;
             var FatherName = snapshot.val().FatherName;
@@ -287,11 +291,23 @@
             var BldGrp = snapshot.val().BldGrp;
             var Mno = snapshot.val().Mno;
             var email = snapshot.val().email;
+            var picurl = snapshot.val().picurl;
+            
 
+            document.getElementById("doa").value = doa;
+            document.getElementById("id").value = Sid;
+            document.getElementById("StudRole").value = StudRole;
             document.getElementById("name").value = name;
+            document.getElementById("FatherName").value = FatherName;
+            document.getElementById("dob").value = dob;
+            document.getElementById("BldGrp").value = BldGrp;
+            document.getElementById("Mno").value = Mno;
             document.getElementById("address").value = address;
+            document.getElementById("Achivement").value = Achivement;
             document.getElementById("email").value = email;
+            document.getElementById("myimg").src = picurl;
           });
+
       }
 
       appfrm = document.querySelector("#appfrm");

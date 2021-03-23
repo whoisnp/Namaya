@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>ApplicationForm</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/assets/css/styles.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.min.css" />
 </head>
 <style>
     #appfrm {
@@ -62,7 +62,7 @@
         <nav class="navbar navbar-light navbar-expand-md">
             <div class="container-fluid">
                 <div>
-                    <img src="/assets/img/Picture1.png" width="100" height="100" />
+                    <img src="assets/img/Picture1.png" width="100" height="100" />
                 </div>
                 <h3 class="text-center">
                     <strong><span style="text-decoration: underline"
@@ -73,7 +73,7 @@
             >
           </h3>
           <div>
-            <img src="/assets/img/Picture2.png" width="100" height="100" />
+            <img src="assets/img/Picture2.png" width="100" height="100" />
           </div>
         </div>
       </nav>
@@ -231,7 +231,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/script.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
@@ -346,7 +346,7 @@ var uploadTask = firebase
       Sid:Sid,
       StudRole:StudRole,
       });
-      window.location.reload();
+      window.location = "dashboard.html";
     }
   }
   );

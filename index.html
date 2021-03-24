@@ -46,29 +46,122 @@
             color: #00aeef;
             border-radius: 50px;
         }
-        /* .navbar-toggler.collapse{
-        color: white;
-        background-color: white;
-      } */
+        /* .navbar-toggler.collapse {
+            color: white;
+            background-color: white;
+            text-align: center;
+        } */
         
         #example {
             width: 100%;
             overflow-x: auto;
         }
         
-        @media only screen and (max-width:600px) {
+        @media only screen and (max-width:992px) {
             table {
                 width: 100%;
             }
-            .card {
-                width: 100%;
+            #navitem {
+                padding-left: 110px;
+            }
+            #navitem:hover {
+                background-color: white;
+                color: #00aeef;
+                border-radius: 5px;
+            }
+        }
+        
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .main-circle {
+            width: 150px;
+            height: 150px;
+            border: 4px solid #00aeef;
+            border-top: 4px solid transparent;
+            border-right: 4px solid transparent;
+            position: relative;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotate 2s infinite;
+        }
+        
+        .main-circle:before {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            content: '';
+            border: 4px solid transparent;
+            border-right: 4px solid #00aeef;
+            transform: rotate(40deg);
+            border-radius: 50%;
+        }
+        
+        .green-circle {
+            animation: rotate 2s infinite .4s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 120px;
+            border: 4px solid #00aeef;
+            border-top: 4px solid transparent;
+            border-right: 4px solid transparent;
+            transform: rotate(-20deg);
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .green-circle:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            border: 4px solid transparent;
+            border-right: 4px solid #00aeef;
+            transform: rotate(60deg);
+        }
+        
+        .brown-circle {
+            animation: rotate 2s infinite .6s;
+            width: 80px;
+            height: 80px;
+            border: 4px solid #00aeef;
+            border-top: 4px solid transparent;
+            border-right: 4px solid transparent;
+            transform: rotate(-20deg);
+            border-radius: 50%;
+        }
+        
+        @keyframes rotate {
+            from {}
+            to {
+                transform: rotate(360deg);
             }
         }
     </style>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark static-top">
+
+<body onload="myfun()">
+    <div class="wrapper" id="loader0">
+        <div class="main-circle">
+            <div class="green-circle">
+                <div class="brown-circle">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark static-top" id="navhid">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="https://plusequalz.educationhost.cloud/wp/wp-content/uploads/2017/05/20210227_084745.png" alt="" width="75" height="75" />
@@ -79,7 +172,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
+                        <a class="nav-link" id="navitem" href="#">Home
                 <span class="sr-only">(current)</span>
               </a>
                     </li>
@@ -95,7 +188,7 @@
                     <li class="nav-item">
                         <a class="nav-link" id="navitem" href="#">Blogs</a>
                     </li>
-                    <li class="nav-item" id="navitem">
+                    <li class="nav-item">
                         <a class="nav-link" id="navitem" href="#">Contacts</a>
                     </li>
                     <li class="nav-item">
@@ -106,13 +199,14 @@
         </div>
     </nav>
 
-    <div class="container py-4">
+    <div class="container py-4" id="pghide">
         <button id="addStud" class="addStud btn btn-success pull-right">
         Add Student
       </button>
 
         <div class="row py-5">
             <div class="col-lg-10 mx-auto">
+
 
 
 
@@ -132,11 +226,11 @@
                             <tr>
                                 <td></td>
                                 <td>
-                                    <div class="d-flex justify-content-center">
+                                    <!-- <div class="d-flex justify-content-center">
                                         <div id="loader" class="spinner-border" role="status">
                                             <span class="sr-only">Loading...</span>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -218,6 +312,20 @@
         document.getElementById("addStud").addEventListener("click", function() {
             window.location = "addStud.html";
         });
+
+        function myfun() {
+            var myVar;
+            document.getElementById("pghide").style.display = "none";
+            document.getElementById("navhid").style.display = "none";
+            myVar = setTimeout(showPage, 3000);
+        }
+
+        function showPage() {
+            document.getElementById("loader0").style.display = "none";
+            document.getElementById("pghide").style.display = "block";
+            document.getElementById("navhid").style.display = "block";
+
+        }
     </script>
 </body>
 

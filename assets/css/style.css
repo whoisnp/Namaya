@@ -68,6 +68,7 @@
         
         #i121h {
             flex-basis: 17.4%;
+            display: inline;
         }
         
         #invfo {
@@ -225,7 +226,7 @@
         }
         
         #i7yzn {
-            flex-basis: 17.4%;
+            flex-basis: 1;
         }
         
         #i6lu1 {

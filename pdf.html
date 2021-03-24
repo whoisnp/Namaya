@@ -1,128 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.min.css" />
 
-  <body>
+</head>
+<style>
+    #doa,
+    #id,
+    #StudRole,
+    #name,
+    #dob,
+    #email,
+    #FatherName,
+    #address,
+    #BldGrp,
+    #Achivement,
+    #Mno,
+    #sign {
+        width: 100%;
+        padding: 7px 10px;
+        border-radius: 2px;
+        color: black;
+        background-color: #ffffff;
+        border: none;
+        border-bottom-width: 3px;
+    }
+    
+    #appfrm {
+        /* background-image: url(/assets/img/Picture2.png); */
+        background-position: center;
+        background-size: cover;
+        background-blend-mode: screen;
+        /* border-color: black;
+        border-style: solid;
+        border-width: 3px; */
+        padding-left: 40px;
+        padding-bottom: 20px;
+    }
+    
+    nav {
+        border-radius: 20px;
+    }
+    
+    #pic {
+        display: inline-block;
+        background-color: #00aeef;
+        color: #00aeef;
+        padding: 0.5rem;
+        font-family: sans-serif;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        margin-left: 7.6rem;
+    }
+    
+    hr {
+        background-color: #00aeef;
+    }
+    
+    #doa {
+        width: 30%;
+    }
+    
+    #mob {
+        display: none;
+    }
+    
+    #comp {
+        display: block;
+    }
+    
+    #logo {
+        width: 100%;
+        height: 100%;
+    }
+    
+    @media only screen and (max-width:990px) {
+        #logo {
+            width: 50%;
+            height: 50%;
+        }
+        .col-lg-2 {
+            width: 20%;
+            padding: 0;
+        }
+        .col-lg-8 {
+            width: 60%;
+            padding: 0;
+        }
+        h3 {
+            font-size: 2.5vw;
+            margin-top: 15px;
+        }
+        h1 {
+            font-size: 6vw;
+        }
+    }
+    
+    @media only screen and (max-width:767px) {
+        #appfrm {
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+        #pic {
+            display: inline-block;
+            background-color: #00aeef;
+            color: white;
+            /* padding: 0.5rem; */
+            font-family: sans-serif;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            margin-left: 0rem;
+        }
+        .col-lg-2 {
+            width: 20%;
+            padding: 0;
+        }
+        .col-lg-8 {
+            width: 60%;
+            padding: 0;
+        }
+        h3 {
+            font-size: 3.5vw;
+            margin-top: 10px;
+        }
+        h1 {
+            font-size: 9vw;
+        }
+        #doa {
+            width: 100%;
+        }
+        #mob {
+            display: block;
+        }
+        #comp {
+            display: none;
+        }
+        #backcont,
+        #editcont {
+            width: 50%;
+        }
+    }
+</style>
+
+<body>
     <div class="myrow" id="whole">
-      <div id="iyno" class="row">
-        <div id="i121h" class="cell">
-          <img alt="" src="assets/img/Picture1.png" id="i6lu1" />
-        </div>
-        <div id="ip4zi" class="cell">
-          <!-- <div id="i3j7u">
-            <u><b>WORLD TRADITIONAL  AND CREATIVE ARTS </b></u>
-            <div>
-              <span><b>&amp;</b></span>
+
+        <div id="iyno" class="row">
+
+
+            <div id="i121h" class="cell">
+                <img alt="" src="assets/img/Picture1.png" id="i6lu1" />
             </div>
-            <div><u>National Martial Arts &amp; Yoga Fedration </u></div>
-            <div>
-              <span
-                ><b><br /><br /></b
+            <div id="ip4zi" class="cell">
+                <div id="i3j7u">
+                    <u><b>WORLD TRADITIONAL  AND CREATIVE ARTS </b></u>
+                    <div>
+                        <span><b>&amp;</b></span>
+                    </div>
+                    <div><u>National Martial Arts &amp; Yoga Fedration </u></div>
+                    <div>
+                        <span><b><br /><br /></b
               ></span>
+                    </div>
+                </div>
             </div>
-          </div> -->
+            <div id="i7yzn" class="cell">
+                <img alt="" src="assets/img/Picture2.png" id="ivpwj" />
+            </div>
         </div>
-        <div id="i7yzn" class="cell">
-          <img alt="" src="assets/img/Picture2.png" id="ivpwj" />
+
+
+
+
+
+        <form id="appfrm">
+            <div class="form-row profile-row">
+
+                <div class="col-md-8">
+                    <h1>Application Form </h1>
+                    <hr />
+                    <div class="col-md-4" id="mob">
+                        <img id="myimg0" src="" alt="Student Image" height="200" width="200">
+                        <!-- <lable for="photo" id="pic">Choose File</lable> -->
+                    </div>
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <label>Date of admission :</label
+                      ><input
+                        class="form-control"
+                        id="doa"
+                        type="text"
+                        name="doa"
+                        
+                      />
+                    </div>
+                    </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <label>Student ID :</label
+                      ><input
+                        class="form-control"
+                        id="id"
+                        type="number"
+                        name="id"
+                      />
+                    </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                      <div class="form-group">
+                        <label>Student Profession :</label
+                        ><input
+                          class="form-control"
+                          id="StudRole"
+                          type="text"
+                          name="profession"
+                        />
+                      </div>
+                      </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <label>Student Name :</label
+                      ><input
+                        class="form-control"
+                        id="name"
+                        type="text"
+                        name="Name"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label>Date of Birth :</label
+                      ><input class="form-control" id="dob" type="text" />
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <label>Father/Gaurdian Name :</label
+                      ><input
+                        class="form-control"
+                        type="text"
+                        name="FatherName"
+                        id="FatherName"
+                      />
+                    </div>
+                    <div class="form-group"><label>Gender :</label></div>
+                            <div class="form-check d-inline">
+                                <input class="form-check-input" type="radio" id="formCheck-2" name="gender" value="Male" /><label class="form-check-label" for="formCheck-2">Male</label
+                      >
+                    </div>
+                    <div class="form-check d-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        id="formCheck-1"
+                        name="gender"
+                        value="female"
+                      /><label class="form-check-label" for="formCheck-1"
+                        >Female</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Blood Group :</label
+                  ><input
+                    class="form-control"
+                    type="text"
+                    name="BldGrp"
+                    id="BldGrp"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Address :</label
+                  ><textarea id="address" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Mobile Number :</label
+                  ><input class="form-control" id="Mno" type="tel" />
+                </div>
+                <div class="form-group">
+                  <label>Email </label
+                  ><input
+                    class="form-control"
+                    type="email"
+                    id="email"
+                    autocomplete="off"
+                    required=""
+                    name="email"
+                  />
+                  <div class="form-group">
+                    <label>Achivement :</label
+                    ><textarea id="Achivement" class="form-control"></textarea>
+                  </div>
+                </div>
+                <hr />
+                <br>
+                <br><br><br>
+                <div class="form-row">
+                  <div class="col-md-4 content-left"id="backcont">
+                   <input type="text" id="sign">
+                   <label for="">Parent Signature</label>
+
+                                <!-- <button class="btn btn-danger form-btn" type="reset">
+                        CANCEL
+                      </button> -->
+                            </div>
+                            <div class="col-md-4 content-left" id="backcont">
+                                <input type="text" id="sign">
+                                <label for="">Parent Signature</label>
+
+                                <!-- <button class="btn btn-danger form-btn" type="reset">
+                         CANCEL
+                       </button> -->
+                            </div>
+                            <div class="col-md-4 content-right" id="editcont">
+                                <input type="text" id="sign">
+                                <label for="">Parent Signature</label>
+
+                                <!-- <button class="btn btn-danger form-btn" type="reset">
+                        CANCEL
+                      </button> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 relative" id="comp">
+                        <!-- <div class="avatar">
+                  <div class="avatar-bg center"></div>
+                </div> -->
+                        <img id="myimg" src="" alt="Student Image" height="200" width="200">
+                        <!-- <input
+                  id="photo"
+                  class="form-control-file form-control"
+                  type="file"
+                  name="avatar-file"
+                  accept="image/png, image/jpeg"
+                  hidden
+                /> -->
+                        <!-- <lable for="photo" id="pic">Choose File</lable> -->
+                    </div>
+                </div>
+        </form>
         </div>
-      </div>
-      <div id="islzc" class="row">
-        <div id="i4om3" class="cell">
-          <div id="i3brg">ADMISSION FORM</div>
-        </div>
-      </div>
-      <div class="row" id="iop5q"></div>
-      <div id="ixjlh" class="row">
-        <div id="i61rg" class="cell">
-          <div class="form-group" id="iy99f">
-            <label class="label" id="iyocd"><u>SI.NO:</u></label
-            ><input class="input" id="sno" />
-          </div>
-          <div class="form-group" id="ie1xf">
-            <label class="label" id="ibb7j"><u>Date:</u></label
-            ><input class="input" id="date" />
-          </div>
-          <form id="i77bw" class="form">
-            <div id="itccm" class="form-group">
-              <label id="i6qky" class="label">Student Name:</label
-              ><input id="name" class="input" />
-            </div>
-            <div id="i0nck" class="form-group">
-              <label id="i9c7d" class="label">Father Name/Gaurdian Name:</label
-              ><input
-                type="text"
-                placeholder=""
-                id="fathername"
-                class="input"
-              />
-            </div>
-            <div id="iwqtt" class="form-group">
-              <label id="iuj61" class="label">Gender</label
-              ><input
-                type="checkbox"
-                value="male"
-                id="male"
-                class="checkbox"
-              /><label id="igvod" class="checkbox-label">Male</label
-              ><input
-                type="checkbox"
-                value="female"
-                id="female"
-                class="checkbox"
-              /><label id="iz2bg" class="checkbox-label">Female</label>
-            </div>
-            <div id="ipqwe" class="form-group">
-              <label id="io26d" class="label">Blood Group:</label
-              ><input type="text" placeholder="" id="bgroup" class="input" />
-            </div>
-            <div id="iglod" class="form-group">
-              <label id="irup8" class="label">Date of Birth:</label
-              ><input type="text" placeholder="" id="dob" class="input" />
-            </div>
-            <div id="id2my" class="form-group">
-              <label id="iqfmf" class="label">Address</label
-              ><textarea id="address" class="textarea"></textarea>
-            </div>
-            <div id="i1399" class="form-group">
-              <label id="ibr2i" class="label">Phone Number:</label
-              ><input type="number" placeholder="" id="number" class="input" />
-            </div>
-            <div class="form-group"></div>
-            <div class="row" id="igxru">
-              <div class="cell" id="i5i2p">
-                <input class="input" id="student" /><label
-                  class="label"
-                  id="im7xx"
-                  >Parent Signture</label
-                >
-              </div>
-              <div class="cell" id="iik3i">
-                <input class="input" id="parent" /><label
-                  class="label"
-                  id="i1uyj"
-                  >Student Signture</label
-                >
-              </div>
-              <div class="cell" id="ilw1f">
-                <input class="input" id="master" /><label
-                  class="label"
-                  id="i3yft"
-                  >Master Signture</label
-                >
-              </div>
-            </div>
-          </form>
-        </div>
-        <div id="invfo" class="cell">
+        <!-- <div id="invfo" class="cell">
           <img
             id="photo"
-            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImZpbGw6IHJnYmEoMCwwLDAsMC4xNSk7IHRyYW5zZm9ybTogc2NhbGUoMC43NSkiPgogICAgICAgIDxwYXRoIGQ9Ik04LjUgMTMuNWwyLjUgMyAzLjUtNC41IDQuNSA2SDVtMTYgMVY1YTIgMiAwIDAgMC0yLTJINWMtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMnoiPjwvcGF0aD4KICAgICAgPC9zdmc+"
+            src=""
           />
-        </div>
-      </div>
+        </div> -->
+    </div>
     </div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
@@ -132,50 +365,52 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
     <script>
-      var firebaseConfig = {
-        apiKey: "AIzaSyCmJCdJ5y8Px2gn7O6PTq_MxVx30Q4zZDM",
-        authDomain: "projecttkr-4aa57.firebaseapp.com",
-        projectId: "projecttkr-4aa57",
-        storageBucket: "projecttkr-4aa57.appspot.com",
-        messagingSenderId: "353303900963",
-        appId: "1:353303900963:web:6ee6c1e0a0e774c2851296",
-        measurementId: "G-12RFY7K0EN",
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-      function getData(uid) {
-        firebase
-          .database()
-          .ref("Students/" + uid)
-          .once("value")
-          .then(function (snapshot) {
-            var name = snapshot.val().name;
-            var dob = snapshot.val().dob;
-            var FatherName = snapshot.val().FatherName;
-            var address = snapshot.val().address;
-            var BldGrp = snapshot.val().BldGrp;
-            var Mno = snapshot.val().Mno;
-            var email = snapshot.val().email;
+        var firebaseConfig = {
+            apiKey: "AIzaSyCmJCdJ5y8Px2gn7O6PTq_MxVx30Q4zZDM",
+            authDomain: "projecttkr-4aa57.firebaseapp.com",
+            projectId: "projecttkr-4aa57",
+            storageBucket: "projecttkr-4aa57.appspot.com",
+            messagingSenderId: "353303900963",
+            appId: "1:353303900963:web:6ee6c1e0a0e774c2851296",
+            measurementId: "G-12RFY7K0EN",
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
 
-            document.getElementById("name").value = name;
-            document.getElementById("address").value = address;
-          });
-      }
-      var query = location.search;
-      //   console.log(query);
-      var query = location.href.split("?")[1];
-      var params = query.split("&");
-      var id;
-      params.forEach((param, index) => {
-        var key = param.split("=")[0];
-        var value = param.split("=")[1];
-        if (key == "id") {
-          id = value;
-          getData(id);
+        function getData(uid) {
+            firebase
+                .database()
+                .ref("Students/" + uid)
+                .once("value")
+                .then(function(snapshot) {
+                    var name = snapshot.val().name;
+                    var dob = snapshot.val().dob;
+                    var FatherName = snapshot.val().FatherName;
+                    var address = snapshot.val().address;
+                    var BldGrp = snapshot.val().BldGrp;
+                    var Mno = snapshot.val().Mno;
+                    var email = snapshot.val().email;
+
+                    document.getElementById("name").value = name;
+                    document.getElementById("address").value = address;
+                });
         }
-      });
-      //   console.log(id);
+        var query = location.search;
+        //   console.log(query);
+        var query = location.href.split("?")[1];
+        var params = query.split("&");
+        var id;
+        params.forEach((param, index) => {
+            var key = param.split("=")[0];
+            var value = param.split("=")[1];
+            if (key == "id") {
+                id = value;
+                getData(id);
+            }
+        });
+        //   console.log(id);
     </script>
-  </body>
+</body>
+
 </html>

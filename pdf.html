@@ -79,6 +79,11 @@
         height: 100%;
     }
     
+    #myimg {
+        margin-left: 30px;
+        margin-top: 90px;
+    }
+    
     @media only screen and (max-width:990px) {
         #logo {
             width: 50%;
@@ -147,9 +152,94 @@
             width: 50%;
         }
     }
+    
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .main-circle {
+        width: 150px;
+        height: 150px;
+        border: 4px solid #00aeef;
+        border-top: 4px solid transparent;
+        border-right: 4px solid transparent;
+        position: relative;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: rotate 2s infinite;
+    }
+    
+    .main-circle:before {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        content: '';
+        border: 4px solid transparent;
+        border-right: 4px solid #00aeef;
+        transform: rotate(40deg);
+        border-radius: 50%;
+    }
+    
+    .green-circle {
+        animation: rotate 2s infinite .4s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 120px;
+        border: 4px solid #00aeef;
+        border-top: 4px solid transparent;
+        border-right: 4px solid transparent;
+        transform: rotate(-20deg);
+        border-radius: 50%;
+        position: relative;
+    }
+    
+    .green-circle:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        border: 4px solid transparent;
+        border-right: 4px solid #00aeef;
+        transform: rotate(60deg);
+    }
+    
+    .brown-circle {
+        animation: rotate 2s infinite .6s;
+        width: 80px;
+        height: 80px;
+        border: 4px solid #00aeef;
+        border-top: 4px solid transparent;
+        border-right: 4px solid transparent;
+        transform: rotate(-20deg);
+        border-radius: 50%;
+    }
+    
+    @keyframes rotate {
+        from {}
+        to {
+            transform: rotate(360deg);
+        }
+    }
 </style>
 
-<body>
+<body onload="myfun()">
+    <div class="wrapper" id="loader0">
+        <div class="main-circle">
+            <div class="green-circle">
+                <div class="brown-circle">
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="myrow" id="whole">
 
         <div id="iyno" class="row">
@@ -384,32 +474,32 @@
                 .ref("Students/" + uid)
                 .once("value")
                 .then(function(snapshot) {
-                  var doa = snapshot.val().doa;
-                  var Sid = snapshot.val().Sid;
-                  var StudRole = snapshot.val().StudRole;
-                  var name = snapshot.val().name;
-                  var dob = snapshot.val().dob;
-                  var FatherName = snapshot.val().FatherName;
-                  var address = snapshot.val().address;
-                  var BldGrp = snapshot.val().BldGrp;
-                  var Mno = snapshot.val().Mno;
-                  var email = snapshot.val().email;
-                  var picurl = snapshot.val().picurl;
-                  
+                    var doa = snapshot.val().doa;
+                    var Sid = snapshot.val().Sid;
+                    var StudRole = snapshot.val().StudRole;
+                    var name = snapshot.val().name;
+                    var dob = snapshot.val().dob;
+                    var FatherName = snapshot.val().FatherName;
+                    var address = snapshot.val().address;
+                    var BldGrp = snapshot.val().BldGrp;
+                    var Mno = snapshot.val().Mno;
+                    var email = snapshot.val().email;
+                    var picurl = snapshot.val().picurl;
 
-                  document.getElementById("doa").value = doa;
-                  document.getElementById("id").value = Sid;
-                  document.getElementById("StudRole").value = StudRole;
-                  document.getElementById("name").value = name;
-                  document.getElementById("FatherName").value = FatherName;
-                  document.getElementById("dob").value = dob;
-                  document.getElementById("BldGrp").value = BldGrp;
-                  document.getElementById("Mno").value = Mno;
-                  document.getElementById("address").value = address;
-                  document.getElementById("Achivement").value = Achivement;
-                  document.getElementById("email").value = email;
-                  document.getElementById("myimg").src = picurl;
-                  document.getElementById("myimg0").src = picurl;
+
+                    document.getElementById("doa").value = doa;
+                    document.getElementById("id").value = Sid;
+                    document.getElementById("StudRole").value = StudRole;
+                    document.getElementById("name").value = name;
+                    document.getElementById("FatherName").value = FatherName;
+                    document.getElementById("dob").value = dob;
+                    document.getElementById("BldGrp").value = BldGrp;
+                    document.getElementById("Mno").value = Mno;
+                    document.getElementById("address").value = address;
+                    document.getElementById("Achivement").value = Achivement;
+                    document.getElementById("email").value = email;
+                    document.getElementById("myimg").src = picurl;
+                    document.getElementById("myimg0").src = picurl;
                 });
         }
         var query = location.search;
@@ -425,6 +515,20 @@
                 getData(id);
             }
         });
+
+        function myfun() {
+            var myVar;
+            document.getElementById("whole").style.display = "none";
+
+            myVar = setTimeout(showPage, 3000);
+        }
+
+        function showPage() {
+            document.getElementById("loader0").style.display = "none";
+            document.getElementById("whole").style.display = "block";
+
+
+        }
         //   console.log(id);
     </script>
 </body>

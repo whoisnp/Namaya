@@ -384,16 +384,32 @@
                 .ref("Students/" + uid)
                 .once("value")
                 .then(function(snapshot) {
-                    var name = snapshot.val().name;
-                    var dob = snapshot.val().dob;
-                    var FatherName = snapshot.val().FatherName;
-                    var address = snapshot.val().address;
-                    var BldGrp = snapshot.val().BldGrp;
-                    var Mno = snapshot.val().Mno;
-                    var email = snapshot.val().email;
+                  var doa = snapshot.val().doa;
+                  var Sid = snapshot.val().Sid;
+                  var StudRole = snapshot.val().StudRole;
+                  var name = snapshot.val().name;
+                  var dob = snapshot.val().dob;
+                  var FatherName = snapshot.val().FatherName;
+                  var address = snapshot.val().address;
+                  var BldGrp = snapshot.val().BldGrp;
+                  var Mno = snapshot.val().Mno;
+                  var email = snapshot.val().email;
+                  var picurl = snapshot.val().picurl;
+                  
 
-                    document.getElementById("name").value = name;
-                    document.getElementById("address").value = address;
+                  document.getElementById("doa").value = doa;
+                  document.getElementById("id").value = Sid;
+                  document.getElementById("StudRole").value = StudRole;
+                  document.getElementById("name").value = name;
+                  document.getElementById("FatherName").value = FatherName;
+                  document.getElementById("dob").value = dob;
+                  document.getElementById("BldGrp").value = BldGrp;
+                  document.getElementById("Mno").value = Mno;
+                  document.getElementById("address").value = address;
+                  document.getElementById("Achivement").value = Achivement;
+                  document.getElementById("email").value = email;
+                  document.getElementById("myimg").src = picurl;
+                  document.getElementById("myimg0").src = picurl;
                 });
         }
         var query = location.search;

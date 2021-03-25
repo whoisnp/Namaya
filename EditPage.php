@@ -10,16 +10,17 @@ if($_SESSION["user_id"]) {
 	
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/styles.min.css" />
 </head>
+
 <style>
 #appfrm {
     /* background-image: url(/assets/img/Picture2.png); */
@@ -40,7 +41,7 @@ nav {
 #pic {
     display: inline-block;
     background-color: #00aeef;
-    color: white;
+    color: #00aeef;
     padding: 0.5rem;
     font-family: sans-serif;
     border-radius: 0.3rem;
@@ -53,7 +54,46 @@ hr {
     background-color: #00aeef;
 }
 
-@media only screen and (max-width:600px) {
+#doa {
+    width: 30%;
+}
+
+#mob {
+    display: none;
+}
+
+#comp {
+    display: block;
+}
+
+@media only screen and (max-width:990px) {
+    .col-lg-2 {
+        width: 20%;
+        padding: 0;
+    }
+
+    .col-lg-8 {
+        width: 60%;
+        padding: 0;
+    }
+
+    h3 {
+        font-size: 2.5vw;
+        margin-top: 15px;
+    }
+
+    h1 {
+        font-size: 6vw;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    #appfrm {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
     #pic {
         display: inline-block;
         background-color: #00aeef;
@@ -65,28 +105,154 @@ hr {
         margin-top: 1rem;
         margin-left: 0rem;
     }
+
+    .col-lg-2 {
+        width: 20%;
+        padding: 0;
+    }
+
+    .col-lg-8 {
+        width: 60%;
+        padding: 0;
+    }
+
+    h3 {
+        font-size: 3.5vw;
+        margin-top: 10px;
+    }
+
+    h1 {
+        font-size: 9vw;
+    }
+
+    #doa {
+        width: 100%;
+    }
+
+    #mob {
+        display: block;
+    }
+
+    #comp {
+        display: none;
+    }
+
+    #backcont,
+    #editcont {
+        width: 50%;
+    }
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-circle {
+    width: 150px;
+    height: 150px;
+    border: 4px solid #00aeef;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    position: relative;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 2s infinite;
+}
+
+.main-circle:before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: '';
+    border: 4px solid transparent;
+    border-right: 4px solid #00aeef;
+    transform: rotate(40deg);
+    border-radius: 50%;
+}
+
+.green-circle {
+    animation: rotate 2s infinite .4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border: 4px solid #00aeef;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    transform: rotate(-20deg);
+    border-radius: 50%;
+    position: relative;
+}
+
+.green-circle:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    border: 4px solid transparent;
+    border-right: 4px solid #00aeef;
+    transform: rotate(60deg);
+}
+
+.brown-circle {
+    animation: rotate 2s infinite .6s;
+    width: 80px;
+    height: 80px;
+    border: 4px solid #00aeef;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    transform: rotate(-20deg);
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    from {}
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 </style>
-</sty /le>
 
-<body>
-    <div class="container profile profile-view" id="profile">
-        <hr />
-        <nav class="navbar navbar-light navbar-expand-md">
-            <div class="container-fluid">
-                <div>
-                    <img src="assets/img/Picture1.png" width="100" height="100" />
-                </div>
-                <h3 class="text-center">
-                    <strong><span style="text-decoration: underline">World Traditional And Creative Arts
-                            Federation&nbsp;</span>&amp;&nbsp;<span style="text-decoration: underline">National Martial
-                            Arts &amp; Yoga Association</span></strong>
-                </h3>
-                <div>
-                    <img src="assets/img/Picture2.png" width="100" height="100" />
+
+<body onload="myfun()">
+    <div class="wrapper" id="loader0">
+        <div class="main-circle">
+            <div class="green-circle">
+                <div class="brown-circle">
+
                 </div>
             </div>
-        </nav>
+        </div>
+    </div>
+    <div class="container profile profile-view" id="profile">
+        <hr />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2">
+                    <img src="assets/img/Picture1.png" width="100%" height="100%" />
+                </div>
+                <div class="col-lg-8">
+                    <h3 class="text-center">
+                        <strong><span style="text-decoration: underline">World Traditional And Creative Arts
+                                Federation&nbsp;</span>&amp;&nbsp;<span style="text-decoration: underline">National
+                                Martial Arts &amp; Yoga Association</span></strong>
+                    </h3>
+
+                </div>
+                <div class="col-lg-2">
+                    <img src="assets/img/Picture2.png" width="100%" height="100%" />
+                </div>
+
+            </div>
+        </div>
         <hr />
         <!-- <div>
         <img src="/assets/img/Picture3.png" width="100" height="100" />
@@ -94,6 +260,10 @@ hr {
       </div> -->
         <form id="appfrm">
             <div class="form-row profile-row">
+                <div class="col-md-4" id="mob">
+                    <img id="myimg0" src="" alt="Student Image" height="200" width="200">
+                    <!-- <lable for="photo" id="pic">Choose File</lable> -->
+                </div>
                 <div class="col-md-8">
                     <h1>Profile</h1>
                     <hr />
@@ -101,7 +271,7 @@ hr {
                         <div class="col-sm-12 col-md-12">
                             <div class="form-group">
                                 <label>Date of admission :</label><input class="form-control" id="doa" type="date"
-                                    name="doa" style="width: 30%;" />
+                                    name="doa" />
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
@@ -160,7 +330,7 @@ hr {
                     </div>
                     <hr />
                     <div class="form-row">
-                        <div class="col-md-6 content-left">
+                        <div class="col-md-6 content-left" id="backcont">
                             <a id="back" class="btn btn-warning form-btn" type="back" style="color: white;">
                                 Back
                             </a>
@@ -169,7 +339,7 @@ hr {
                     CANCEL
                   </button> -->
                         </div>
-                        <div class="col-md-6 content-right">
+                        <div class="col-md-6 content-right" id="editcont">
                             <button id="sumbit" class="btn btn-primary form-btn" type="submit">
                                 Edit
 
@@ -179,7 +349,7 @@ hr {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 relative">
+                <div class="col-md-4 relative" id="comp">
                     <!-- <div class="avatar">
               <div class="avatar-bg center"></div>
             </div> -->
@@ -250,6 +420,7 @@ hr {
                 document.getElementById("Achivement").value = Achivement;
                 document.getElementById("email").value = email;
                 document.getElementById("myimg").src = picurl;
+                document.getElementById("myimg0").src = picurl;
             });
 
     }
@@ -318,12 +489,24 @@ hr {
     document.getElementById("back").addEventListener("click", function() {
         window.location = "index.html";
     });
+
+    function myfun() {
+        var myVar;
+        document.getElementById("profile").style.display = "none";
+
+        myVar = setTimeout(showPage, 3000);
+    }
+
+    function showPage() {
+        document.getElementById("loader0").style.display = "none";
+        document.getElementById("profile").style.display = "block";
+
+
+    }
     </script>
 </body>
 
 </html>
-
-
 
 
 <?php

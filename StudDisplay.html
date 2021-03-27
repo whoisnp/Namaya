@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>ApplicationForm</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
@@ -16,40 +14,256 @@
     <link rel="stylesheet" href="assets/css/Search-Field-With-Icon.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/assets/css/styles.min.css" />
-  </head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet" />
 
-  <body>
-    <div class="row">
-      <div class="col-lg-12">
-        <!-- <div id="issuesList"></div> -->
-        <div class="search-container">
-          <input
-            type="text"
-            class="search-input"
-            name="search-bar"
-            placeholder="Enter your StudentId"
-            id="search-bar"
-          /><button class="btn btn-light search-btn" type="button" id="search">
-            <i class="fa fa-search"></i>
-          </button>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+    * {
+        font-family: Roboto, sans-serif;
+        padding: 0;
+        margin: 0;
+    }
+    
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        background-image: url(assets/img/bgStudent.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family: "Lato", sans-serif;
+    }
+    
+    .navbar {
+        min-height: 80px;
+        background-color: transparent;
+    }
+
+    .nav-link {
+        background-color: transparent;
+        border-color: transparent;
+        color: white;
+        font-family: "Lato", sans-serif;
+        font-size: 14px;
+        font-weight: 800 (black);
+        font-style: normal;
+        line-height: 1.5em;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+    }
+
+    #navitem:hover {
+        background-color: white;
+        color: #00aeef;
+        border-radius: 50px;
+    }
+
+    .navbar-dark .navbar-toggler{
+        color: transparent;
+        border-color: transparent;
+    }
+
+    .flexbox {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .search {
+        margin: 20px;
+        height: 100px;
+    }
+    
+    .search>h3 {
+        font-weight: normal;
+    }
+    
+    .search>h1,
+    .search>h3 {
+        color: black;
+        margin-bottom: 15px;
+        text-shadow: 0 1px #0091c2;
+        font-weight: 800;
+        font-family: "Lato", sans-serif;
+    }
+    
+    .search>div {
+        display: inline-block;
+        position: relative;
+        filter: drop-shadow(0 1px #0091c2);
+    }
+    
+    .search>div:after {
+        content: "";
+        background: black;
+        width: 4px;
+        height: 20px;
+        position: absolute;
+        top: 40px;
+        right: 2px;
+        transform: rotate(135deg);
+    }
+    
+    .search>div>input {
+        color: black;
+        font-size: 20px;
+        background: transparent;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        border: solid 3px black;
+        outline: none;
+        border-radius: 35px;
+        transition: width 0.5s;
+        font-family: "Lato", sans-serif;
+    }
+    
+    .search>div>input::placeholder {
+        color: #efefef;
+        opacity: 0;
+        transition: opacity 150ms ease-out;
+        font-family: "Lato", sans-serif;
+    }
+    
+    .search>div>input:focus::placeholder {
+        font-family: "Lato", sans-serif;
+        opacity: 1;
+    }
+    
+    .search>div>input:focus,
+    .search>div>input:not(:placeholder-shown) {
+        width: 350px;
+    }
+    
+    #back {
+        border-radius: 50px;
+        font-family: "Lato", sans-serif;
+        color:white;
+        background-color: black;
+        
+    }
+
+    #back:hover{
+            background-color: #00aeef;
+    }
+    
+    #search {
+        border-radius: 50px;
+        height: 50px;
+        width: 50px;
+        background-color: black;
+    }
+    
+    #search:hover {
+            background-color: #00aeef;
+
+    }
+    @media screen and (max-width: 670px){
+      body {
+        min-height: 500px;
+        background-image: url(assets/img/bgStudent_mobile.jpg);
+
+      }
+    }
+    @media only screen and (max-width:767px) {
+        #search-bar {
+            width: 80%;
+        }
+        #searchdiv {
+            margin-left: 20px;
+            display: inline;
+        }
+        #back {
+            margin-top: 20px;
+            margin-left: 80px;
+            color:white; 
+            background-color: black;
+            /* border-radius: 50px; */
+        }
+        #back:hover{
+            background-color: #00aeef;
+        }
+        h1 {
+            font-size: 9vw;
+            margin-left: 6px;
+        }
+        #search {
+            border-radius: 50px;
+            height: 40px;
+            width: 40px;
+        }
+        #search:hover {
+            background-color: #00aeef;
+
+        }
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark static-top" id="navhid">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="https://plusequalz.educationhost.cloud/wp/wp-content/uploads/2017/05/20210227_084745.png"
+                alt="" width="75" height="75" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="text-white navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" id="navitem" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="navitem" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="navitem" href="#">Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="navitem" href="#">Instructors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="navitem" href="#">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="navitem" href="#">Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="#" id="navitem" onclick="signOut()">Signout</a> -->
+                    <a href="logout.php?logout=true" class="nav-link">Logout</a>
+                </li>
+            </ul>
         </div>
-      </div>
     </div>
-    <div class="col-md-6 content-right">
-      <a
-        id="back"
-        class="btn btn-warning form-btn"
-        type="back"
-        style="color: white"
-      >
-        Back
-      </a>
+</nav>
+
+<body>
+    <div class="flexbox">
+        <div class="search">
+            <h1>Search the Student</h1>
+
+            <div id="searchdiv">
+                <input type="text" name="searchbar" id="search-bar" placeholder="Search" required>
+
+            </div> <button class="btn btn-primary search-button" id="search"><i class="fa fa-search"></i></button><a id="back" class="btn btn-warning form-btn" type="back" style="">
+              Back
+            </a>
+        </div>
     </div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/script.min.js"></script>
@@ -63,40 +277,41 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-storage.js"></script>
     <script src="/assets/js/script.min.js"></script>
     <script>
-      var firebaseConfig = {
-        apiKey: "AIzaSyCmJCdJ5y8Px2gn7O6PTq_MxVx30Q4zZDM",
-        authDomain: "projecttkr-4aa57.firebaseapp.com",
-        projectId: "projecttkr-4aa57",
-        storageBucket: "projecttkr-4aa57.appspot.com",
-        messagingSenderId: "353303900963",
-        appId: "1:353303900963:web:6ee6c1e0a0e774c2851296",
-        measurementId: "G-12RFY7K0EN",
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
+        var firebaseConfig = {
+            apiKey: "AIzaSyCmJCdJ5y8Px2gn7O6PTq_MxVx30Q4zZDM",
+            authDomain: "projecttkr-4aa57.firebaseapp.com",
+            projectId: "projecttkr-4aa57",
+            storageBucket: "projecttkr-4aa57.appspot.com",
+            messagingSenderId: "353303900963",
+            appId: "1:353303900963:web:6ee6c1e0a0e774c2851296",
+            measurementId: "G-12RFY7K0EN",
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
 
-      document.getElementById("search").addEventListener("click", function () {
-        // console.log("Hello World");
-        var Sid = document.getElementById("search-bar").value;
-        console.log(Sid);
-        firebase
-          .database()
-          .ref("Students/")
-          .orderByChild("Sid")
-          .equalTo(Sid)
-          .once("value")
-          .then(function (snapshot) {
-            snapshot.forEach(function (childSnapshot) {
-              // console.log(childSnapshot.key);
-              var Stud = childSnapshot.key;
-              window.location = "SingleStud.html?id=" + Stud;
-            });
-          });
-      });
-      document.getElementById("back").addEventListener("click", function () {
-        window.location = "https://plusequalz.educationhost.cloud/wp";
-      });
+        document.getElementById("search").addEventListener("click", function() {
+            // console.log("Hello World");
+            var Sid = document.getElementById("search-bar").value;
+            console.log(Sid);
+            firebase
+                .database()
+                .ref("Students/")
+                .orderByChild("Sid")
+                .equalTo(Sid)
+                .once("value")
+                .then(function(snapshot) {
+                    snapshot.forEach(function(childSnapshot) {
+                        // console.log(childSnapshot.key);
+                        var Stud = childSnapshot.key;
+                        window.location = "SingleStud.html?id=" + Stud;
+                    });
+                });
+        });
+        document.getElementById("back").addEventListener("click", function() {
+            window.location = "https://plusequalz.educationhost.cloud/wp";
+        });
     </script>
-  </body>
+</body>
+
 </html>

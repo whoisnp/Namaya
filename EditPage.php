@@ -349,19 +349,22 @@ hr {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 relative" id="comp">
-                    <!-- <div class="avatar">
-              <div class="avatar-bg center"></div>
-            </div> -->
+                <!-- <div class="col-md-4 relative" id="comp">
+                    <div class="avatar">
+                        <div class="avatar-bg center"></div>
+                    </div>
                     <img id="myimg" src="" alt="Student Image" height="200" width="200">
-                    <!-- <input
-              id="photo"
-              class="form-control-file form-control"
-              type="file"
-              name="avatar-file"
-              accept="image/png, image/jpeg"
-              hidden
-            /> -->
+                    <input id="photo" class="form-control-file form-control" type="file" name="avatar-file"
+                    accept="image/png, image/jpeg" hidden />
+                    <lable for="photo" id="pic">Choose File</lable>
+                </div> -->
+                <div class="col-md-4 relative" id="comp">
+                    <div class="avatar">
+                        <!-- <div class="avatar-bg center"></div> -->
+                        <img id="myimg" src="" alt="Student Image" height="200" width="200">
+                    </div>
+                    <input id="photo" class="form-control-file form-control" type="file" name="avatar-file"
+                        accept="image/png, image/jpeg" value="" />
                     <!-- <lable for="photo" id="pic">Choose File</lable> -->
                 </div>
             </div>
@@ -374,6 +377,7 @@ hr {
       https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-storage.js"></script>
     <script>
     var firebaseConfig = {
         apiKey: "AIzaSyCmJCdJ5y8Px2gn7O6PTq_MxVx30Q4zZDM",
@@ -387,6 +391,19 @@ hr {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+
+    var storage = firebase.storage();
+    var storageRef = storage.ref();
+    var picurl;
+
+    var messagesRef = firebase.database().ref("Students");
+
+    var imagesRef = storageRef.child('images');
+    var spaceRef = storageRef.child('images/space.jpg');
+
+    var ImgUrl;
+    var files = [];
+    var reader = new FileReader();
 
     //   console.log(uid);
     function getData(uid) {
@@ -406,6 +423,8 @@ hr {
                 var Mno = snapshot.val().Mno;
                 var email = snapshot.val().email;
                 var picurl = snapshot.val().picurl;
+                var gender = snapshot.val().gender;
+                var Achivement = snapshot.val().Achivement;
 
 
                 document.getElementById("doa").value = doa;
@@ -421,6 +440,9 @@ hr {
                 document.getElementById("email").value = email;
                 document.getElementById("myimg").src = picurl;
                 document.getElementById("myimg0").src = picurl;
+                gender == "Male" ?
+                    (document.getElementById("formCheck-2").checked = true) :
+                    (document.getElementById("formCheck-1").checked = true);
             });
 
     }
@@ -428,6 +450,9 @@ hr {
     appfrm = document.querySelector("#appfrm");
     appfrm.addEventListener("submit", (e) => {
         e.preventDefault();
+        var doa = document.getElementById("doa").value;
+        var Sid = document.getElementById("id").value;
+        var StudRole = document.getElementById("StudRole").value;
         var name = document.getElementById("name").value;
         var dob = document.getElementById("dob").value;
         var FatherName = document.getElementById("FatherName").value;
@@ -436,9 +461,31 @@ hr {
         var BldGrp = document.getElementById("BldGrp").value;
         var Mno = document.getElementById("Mno").value;
         var email = document.getElementById("email").value;
-        // saveMessage(name, dob, FatherName, gender ,address, BldGrp, Mno, email);
-        change(name, dob, FatherName, gender, address, BldGrp, Mno, email);
-        // console.log(name, dob, FatherName, gender, address, BldGrp, Mno, email);
+        var Achivement = document.getElementById("Achivement").value;
+
+        var uploadTask = firebase
+            .storage()
+            .ref("Images/" + name + ".png")
+            .put(files[0]);
+        uploadTask.snapshot.ref.getDownloadURL().then(function(url) {
+            var picurl = url
+            console.log(name, dob, FatherName, gender, address, BldGrp, Mno, email, picurl)
+            change(name,
+                dob,
+                FatherName,
+                gender,
+                address,
+                BldGrp,
+                Mno,
+                email,
+                picurl,
+                doa,
+                Sid,
+                StudRole,
+                Achivement)
+        });
+        // change(name, dob, FatherName, gender, address, BldGrp, Mno, email);
+
         function radioGender() {
             var Gender = document.querySelector("input[name=gender]:checked")
                 .value;
@@ -453,7 +500,12 @@ hr {
             address,
             BldGrp,
             Mno,
-            email
+            email,
+            picurl,
+            doa,
+            Sid,
+            StudRole,
+            Achivement
         ) {
             var messagesRef = firebase.database().ref("Students/" + id);
             //   console.log(id);
@@ -467,11 +519,34 @@ hr {
                 BldGrp: BldGrp,
                 Mno: Mno,
                 email: email,
+                picurl: picurl,
+                doa: doa,
+                Sid: Sid,
+                StudRole: StudRole,
+                Achivement: Achivement,
             });
+            window.location = "dashboard.php";
         }
 
-        window.location.reload();
+        // window.location.reload();
     });
+    //   ================================ Image Processing================================
+    /**---------------------------------   selction ---------------------------------- **/
+    document.getElementById("photo").onclick = (e) => {
+        var input = document.getElementById("photo");
+        input.onchange = (e) => {
+            files = e.target.files;
+            reader = new FileReader();
+            reader.onload = () => {
+                console.log("done");
+            };
+            reader.readAsDataURL(files[0]);
+        };
+        // input.click();
+    };
+
+
+
     var query = location.search;
     //   console.log(query);
     var query = location.href.split("?")[1];
@@ -487,7 +562,7 @@ hr {
     });
     //   console.log(id);
     document.getElementById("back").addEventListener("click", function() {
-        window.location = "index.html";
+        window.location = "dashboard.php";
     });
 
     function myfun() {

@@ -281,6 +281,7 @@ appfrm.addEventListener("submit", (e) => {
         StudRole
     ) {
         var newMessageRef = messagesRef.push();
+        var Achivement = "None"
         newMessageRef.set({
             name: name,
             dob: dob,
@@ -294,8 +295,9 @@ appfrm.addEventListener("submit", (e) => {
             doa: doa,
             Sid: Sid,
             StudRole: StudRole,
+            Achivement: Achivement,
         });
-        window.location = "dashboard.html";
+        window.location = "dashboard.php";
     }
 });
 //   ================================ Image Processing================================
@@ -310,7 +312,7 @@ document.getElementById("photo").onclick = (e) => {
         };
         reader.readAsDataURL(files[0]);
     };
-    input.click();
+    // input.click();
 };
 
 /**---------------------------------  uploading ---------------------------------- **/

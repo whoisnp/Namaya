@@ -329,7 +329,7 @@ if($_SESSION["user_id"]) {
         });
     });
     document.getElementById("addStud").addEventListener("click", function() {
-        window.location = "addStud.html";
+        window.location = "addStud.php";
     });
 
     function myfun() {

@@ -58,6 +58,12 @@ if($_SESSION["user_id"]) {
         color: #00aeef;
         border-radius: 50px;
     }
+   #myInput{
+        background-color: #00aeef;
+        height:40px;
+        border-radius:2px;
+     
+    }
 
     /* .navbar-toggler.collapse {
             color: white;
@@ -179,6 +185,7 @@ if($_SESSION["user_id"]) {
 
     <nav class="navbar navbar-expand-lg navbar-dark static-top" id="navhid">
         <div class="container">
+       
             <a class="navbar-brand" href="#">
                 <img src="https://plusequalz.educationhost.cloud/wp/wp-content/uploads/2017/05/20210227_084745.png"
                     alt="" width="75" height="75" />
@@ -222,10 +229,14 @@ if($_SESSION["user_id"]) {
         <button id="addStud" class="addStud btn btn-success pull-right">
             Add Student
         </button>
-
+        <div class="row content-right" id="sear">
+            <input type="text" id="myInput" onkeyup="SearchStud()" placeholder="Search for names.." title="Type in a name" />
+            </div>
         <div class="row py-5">
+           
             <div class="col-lg-10 mx-auto">
 
+           
 
 
 
@@ -344,6 +355,24 @@ if($_SESSION["user_id"]) {
         document.getElementById("pghide").style.display = "block";
         document.getElementById("navhid").style.display = "block";
 
+    }
+    function SearchStud() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("example");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
     }
     </script>
 </body>

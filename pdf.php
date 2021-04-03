@@ -22,6 +22,10 @@ if($_SESSION["user_id"]) {
 
 </head>
 <style>
+body {
+    pointer-events: none;
+}
+
 #doa,
 #id,
 #StudRole,
@@ -386,7 +390,8 @@ hr {
                 document.getElementById("myimg").src = picurl;
                 document.getElementById("myimg0").src = picurl;
                 setTimeout(() => {
-                    print()
+                    // html2pdf(document.body);
+                    print();
                 }, 2000);
             });
     }
@@ -404,6 +409,15 @@ hr {
         }
     });
     //   console.log(id);
+    function addScript(url) {
+        var script = document.createElement("script");
+        script.type = "application/javascript";
+        script.src = url;
+        document.head.appendChild(script);
+    }
+    addScript(
+        "https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"
+    );
     </script>
 </body>
 

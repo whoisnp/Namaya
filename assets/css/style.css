@@ -55,7 +55,6 @@
         .cell {
             min-height: 75px;
             flex-grow: 1;
-            flex-basis: 100%;
         }
         
         * {
@@ -67,7 +66,7 @@
         }
         
         #i121h {
-            flex-basis: 17.4%;
+            flex-basis: 1%;
             display: inline;
         }
         
@@ -226,7 +225,8 @@
         }
         
         #i7yzn {
-            flex-basis: 1;
+            flex-basis: 1%;
+            display: inline;
         }
         
         #i6lu1 {
@@ -382,7 +382,8 @@
                 margin: 35px 20px 15px 20px;
             }
             #ip4zi {
-                flex-basis: 48.4%;
+                flex-basis: 31%;
+                display: inline;
             }
             #i7yzn {
                 flex-basis: 1%;

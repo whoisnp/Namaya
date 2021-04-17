@@ -434,12 +434,21 @@
                 .equalTo(Sid)
                 .once("value")
                 .then(function(snapshot) {
-                    snapshot.forEach(function(childSnapshot) {
-                        // console.log(childSnapshot.key);
-                        var Stud = childSnapshot.key;
-                        window.location = "SingleStud.html?id=" + Stud;
-                    });
+                    if (snapshot.exists()) {
+                        snapshot.forEach(function(childSnapshot) {
+                            // console.log(childSnapshot.key);
+                            var Stud = childSnapshot.key;
+                            window.location = "SingleStud.html?id=" + Stud;
+
+
+                        });
+                    } else {
+                        alert("in valid user");
+                    }
+
                 });
+
+
         });
         document.getElementById("back").addEventListener("click", function() {
             window.location = "https://plusequalz.educationhost.cloud/wp";

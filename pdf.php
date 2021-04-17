@@ -26,7 +26,21 @@ body {
     pointer-events: none;
     disable;
     }
-    
+    .cell {
+            min-height: 75px;
+            flex-grow: 1;
+        }
+        #i121h {
+            flex-basis: 10.4%;
+            display: inline;
+        }
+        #ip4zi{
+            flex-basis: 48.4%;
+        }
+        #i121i{
+            flex-basis: 2.4%;
+            display: inline;
+        }
 
 #doa,
 #id,
@@ -187,7 +201,7 @@ hr {
         <div id="iyno" class="row">
 
 
-            <div id="i121h" class="cell">
+            <div id="i121i" class="cell">
                 <img alt="" src="assets/img/Picture1.png" id="i6lu1" />
             </div>
             <div id="ip4zi" class="cell">
@@ -202,7 +216,7 @@ hr {
                     </div>
                 </div>
             </div>
-            <div id="i7yzn" class="cell">
+            <div id="i121h" class="cell">
                 <img alt="" src="assets/img/Picture2.png" id="ivpwj" />
             </div>
         </div>

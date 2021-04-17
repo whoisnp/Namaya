@@ -196,25 +196,35 @@ if($_SESSION["user_id"]) {
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" id="navitem" href="#">Home
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/">Home
+                    
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="navitem" href="#"> Student Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="navitem" href="#">About</a>
+                        <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/about-studio/">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="navitem" href="#">Classes</a>
+                        <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/classes-page/">Classes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="navitem" href="#">Instructors</a>
+                        <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/our-team/">Instructors</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="navitem" href="#">Blogs</a>
+                        <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/blog-excerpt/">Blogs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="navitem" href="#">Contacts</a>
+                        <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/contacts/">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" id="navitem" href="studDisplay.html">Students</a>
                     </li>
                     <li class="nav-item">
                         <!-- <a class="nav-link" href="#" id="navitem" onclick="signOut()">Signout</a> -->

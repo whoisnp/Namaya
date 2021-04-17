@@ -24,7 +24,9 @@ if($_SESSION["user_id"]) {
 <style>
 body {
     pointer-events: none;
-}
+    disable;
+    }
+    
 
 #doa,
 #id,
@@ -294,7 +296,7 @@ hr {
                         </div>
                         <div class="col-md-4 content-left" id="backcont">
                             <input type="text" id="sign">
-                            <label for="">Parent Signature</label>
+                            <label for="">Student Signature</label>
 
                             <!-- <button class="btn btn-danger form-btn" type="reset">
                          CANCEL
@@ -302,7 +304,7 @@ hr {
                         </div>
                         <div class="col-md-4 content-right" id="editcont">
                             <input type="text" id="sign">
-                            <label for="">Parent Signature</label>
+                            <label for="">Instructor Signature</label>
 
                             <!-- <button class="btn btn-danger form-btn" type="reset">
                         CANCEL

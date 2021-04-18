@@ -262,6 +262,8 @@ hr {
             <div class="form-row profile-row">
                 <div class="col-md-4" id="mob">
                     <img id="myimg0" src="" alt="Student Image" height="200" width="200">
+                    <input id="photo" class="form-control-file form-control" type="file" name="avatar-file"
+                        accept="image/png, image/jpeg" value="" />
                     <!-- <lable for="photo" id="pic">Choose File</lable> -->
                 </div>
                 <div class="col-md-8">

@@ -390,6 +390,8 @@ hr {
                 var Mno = snapshot.val().Mno;
                 var email = snapshot.val().email;
                 var picurl = snapshot.val().picurl;
+                var gender = snapshot.val().gender;
+                var Achivement = snapshot.val().Achivement;
 
 
                 document.getElementById("doa").value = doa;
@@ -405,6 +407,9 @@ hr {
                 document.getElementById("email").value = email;
                 document.getElementById("myimg").src = picurl;
                 document.getElementById("myimg0").src = picurl;
+                gender == "Male" ?
+                    (document.getElementById("formCheck-2").checked = true) :
+                    (document.getElementById("formCheck-1").checked = true);
                 setTimeout(() => {
                     // html2pdf(document.body);
                     print();

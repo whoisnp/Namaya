@@ -58,11 +58,12 @@ if($_SESSION["user_id"]) {
         color: #00aeef;
         border-radius: 50px;
     }
-   #myInput{
+
+    #myInput {
         background-color: #00aeef;
-        height:40px;
-        border-radius:2px;
-     
+        height: 40px;
+        border-radius: 2px;
+
     }
 
     /* .navbar-toggler.collapse {
@@ -185,7 +186,7 @@ if($_SESSION["user_id"]) {
 
     <nav class="navbar navbar-expand-lg navbar-dark static-top" id="navhid">
         <div class="container">
-       
+
             <a class="navbar-brand" href="#">
                 <img src="https://plusequalz.educationhost.cloud/wp/wp-content/uploads/2017/05/20210227_084745.png"
                     alt="" width="75" height="75" />
@@ -199,7 +200,7 @@ if($_SESSION["user_id"]) {
 
                     <li class="nav-item">
                         <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/">Home
-                    
+
                         </a>
                     </li>
                     <li class="nav-item">
@@ -224,7 +225,7 @@ if($_SESSION["user_id"]) {
                     </li>
                     <li class="nav-item">
                     <li class="nav-item">
-                        <a class="nav-link" id="navitem" href="studDisplay.html">Students</a>
+                        <a class="nav-link" id="navitem" href="StudDisplay.html">Students</a>
                     </li>
                     <li class="nav-item">
                         <!-- <a class="nav-link" href="#" id="navitem" onclick="signOut()">Signout</a> -->
@@ -240,13 +241,14 @@ if($_SESSION["user_id"]) {
             Add Student
         </button>
         <div class="row content-right" id="sear">
-            <input type="text" id="myInput" onkeyup="SearchStud()" placeholder="Search for names.." title="Type in a name" />
-            </div>
+            <input type="text" id="myInput" onkeyup="SearchStud()" placeholder="Search for names.."
+                title="Type in a name" />
+        </div>
         <div class="row py-5">
-           
+
             <div class="col-lg-10 mx-auto">
 
-           
+
 
 
 
@@ -366,6 +368,7 @@ if($_SESSION["user_id"]) {
         document.getElementById("navhid").style.display = "block";
 
     }
+
     function SearchStud() {
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("myInput");

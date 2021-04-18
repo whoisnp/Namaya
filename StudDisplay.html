@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>ApplicationForm</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
@@ -14,339 +16,403 @@
     <link rel="stylesheet" href="assets/css/Search-Field-With-Icon.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/assets/css/styles.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
-</head>
-<style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+  </head>
+  <style>
     @font-face {
-        font-family: lato;
-        src: url(assets/fonts/Lato-Regular.ttf);
-        font-style: normal;
-        font-weight: 400;
+      font-family: lato;
+      src: url(assets/fonts/Lato-Regular.ttf);
+      font-style: normal;
+      font-weight: 400;
     }
-    
+
     @font-face {
-        font-family: pato;
-        src: url(assets/fonts/Lato-Black.ttf);
-        font-style: normal;
-        font-weight: 900;
+      font-family: pato;
+      src: url(assets/fonts/Lato-Black.ttf);
+      font-style: normal;
+      font-weight: 900;
     }
     /* /fonts */
     /* content */
-    
+
     html,
     body {
-        width: 100%;
-        height: 100%;
-        background-image: url(assets/img/bgStudent.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        font-family: pato, sans-serif;
+      width: 100%;
+      height: 100%;
+      background-image: url(assets/img/bgStudent.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: pato, sans-serif;
     }
-    
+
     .navbar {
-        min-height: 80px;
-        background-color: #00aeef;
-        opacity: 0.95;
+      min-height: 80px;
+      background-color: #00aeef;
+      opacity: 0.95;
     }
-    
+
     .nav-link {
-        background-color: transparent;
-        border-color: transparent;
-        color: white;
-        font-family: pato, sans-serif;
-        font-size: 14px;
-        font-weight: 900 (black);
-        font-style: normal;
-        line-height: 1.5em;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
+      background-color: transparent;
+      border-color: transparent;
+      color: white;
+      font-family: pato, sans-serif;
+      font-size: 14px;
+      font-weight: 900 (black);
+      font-style: normal;
+      line-height: 1.5em;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
     }
-    
+
     #navitem:hover {
-        background-color: white;
-        color: #00aeef;
-        border-radius: 50px;
+      background-color: white;
+      color: #00aeef;
+      border-radius: 50px;
     }
-    
+
     .navbar-dark .navbar-toggler {
-        color: transparent;
-        border-color: transparent;
+      color: transparent;
+      border-color: transparent;
     }
-    
+
     .flexbox {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    
+
     .search {
-        margin: 20px;
-        height: 170px;
-        width: 600px;
-        background: transparent;
-        padding-left: 50px;
-        padding-top: 30px;
-        border-radius: 300px;
-        box-shadow: 10px;
-        opacity: 0.8;
+      margin: 20px;
+      height: 170px;
+      width: 600px;
+      background: transparent;
+      padding-left: 50px;
+      padding-top: 30px;
+      border-radius: 300px;
+      box-shadow: 10px;
+      opacity: 0.8;
     }
-    
-    .search>h3 {
-        font-weight: normal;
+
+    .search > h3 {
+      font-weight: normal;
     }
-    
-    .search>h1,
-    .search>h3 {
-        color: black;
-        margin-bottom: 15px;
-        text-shadow: 0 1px #0091c2;
-        font-weight: 800;
-        font-family: pato, sans-serif;
+
+    .search > h1,
+    .search > h3 {
+      color: black;
+      margin-bottom: 15px;
+      text-shadow: 0 1px #0091c2;
+      font-weight: 800;
+      font-family: pato, sans-serif;
     }
-    
-    .search>div {
-        display: inline-block;
-        position: relative;
-        filter: drop-shadow(0 1px #0091c2);
+
+    .search > div {
+      display: inline-block;
+      position: relative;
+      filter: drop-shadow(0 1px #0091c2);
     }
-    
-    .search>div>input {
-        color: black;
-        font-size: 20px;
-        background: transparent;
-        width: 350px;
-        height: 50px;
-        padding: 10px;
-        border: solid 3px black;
-        outline: none;
-        border-radius: 35px;
-        transition: width 0.5s;
-        font-family: pato, sans-serif;
+
+    .search > div > input {
+      color: black;
+      font-size: 20px;
+      background: transparent;
+      width: 350px;
+      height: 50px;
+      padding: 10px;
+      border: solid 3px black;
+      outline: none;
+      border-radius: 35px;
+      transition: width 0.5s;
+      font-family: pato, sans-serif;
     }
-    
-    .search>div>input::placeholder {
-        color: #efefef;
-        opacity: 0;
-        transition: opacity 150ms ease-out;
-        font-family: pato, sans-serif;
+
+    .search > div > input::placeholder {
+      color: #efefef;
+      opacity: 0;
+      transition: opacity 150ms ease-out;
+      font-family: pato, sans-serif;
     }
-    
-    .search>div>input:focus::placeholder {
-        font-family: pato, sans-serif;
-        opacity: 1;
+
+    .search > div > input:focus::placeholder {
+      font-family: pato, sans-serif;
+      opacity: 1;
     }
-    
+
     #back {
-        border-radius: 50px;
-        font-family: pato, sans-serif;
+      border-radius: 50px;
+      font-family: pato, sans-serif;
+      color: white;
+      background-color: black;
+    }
+
+    #back:hover {
+      background-color: #00aeef;
+    }
+
+    #search {
+      border-radius: 50px;
+      height: 50px;
+      width: 50px;
+      background-color: black;
+    }
+
+    #search:hover {
+      background-color: #00aeef;
+    }
+
+    @media screen and (max-width: 670px) {
+      body {
+        min-height: 500px;
+        background-image: url(assets/img/bgStudent_mobile.jpg);
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .search {
+        padding-top: 5px;
+        padding-left: 5px;
+        border-radius: 0px;
+        width: 100%;
+        margin: 0px;
+      }
+      #search-bar {
+        width: 80%;
+        height: 40px;
+      }
+      #searchdiv {
+        margin-left: 20px;
+        display: inline;
+      }
+      #back {
+        margin-top: 20px;
+        margin-left: 120px;
         color: white;
         background-color: black;
-    }
-    
-    #back:hover {
+        /* border-radius: 50px; */
+      }
+      #back:hover {
         background-color: #00aeef;
-    }
-    
-    #search {
+      }
+      h1 {
+        font-size: 9vw;
+        margin-left: 6px;
+      }
+      #search {
         border-radius: 50px;
-        height: 50px;
-        width: 50px;
-        background-color: black;
-    }
-    
-    #search:hover {
+        height: 40px;
+        width: 40px;
+      }
+      #search:hover {
         background-color: #00aeef;
-    }
-    
-    @media screen and (max-width: 670px) {
-        body {
-            min-height: 500px;
-            background-image: url(assets/img/bgStudent_mobile.jpg);
-        }
-    }
-    
-    @media only screen and (max-width: 767px) {
-        .search {
-            padding-top: 5px;
-            padding-left: 5px;
-            border-radius: 0px;
-            width: 100%;
-            margin: 0px;
-        }
-        #search-bar {
-            width: 80%;
-            height: 40px;
-        }
-        #searchdiv {
-            margin-left: 20px;
-            display: inline;
-        }
-        #back {
-            margin-top: 20px;
-            margin-left: 120px;
-            color: white;
-            background-color: black;
-            /* border-radius: 50px; */
-        }
-        #back:hover {
-            background-color: #00aeef;
-        }
-        h1 {
-            font-size: 9vw;
-            margin-left: 6px;
-        }
-        #search {
-            border-radius: 50px;
-            height: 40px;
-            width: 40px;
-        }
-        #search:hover {
-            background-color: #00aeef;
-        }
+      }
     }
     /* modal */
-    
+
     .modal-content {
-        background-color: #1e1d22;
-        width: 100% !important;
-        height: 100% !important;
-        font-size: 15.6px;
-        font-family: lato, sans-serif;
-        font-weight: 300;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border: 0 !important;
-        line-height: 28px;
+      background-color: #1e1d22;
+      width: 100% !important;
+      height: 100% !important;
+      font-size: 15.6px;
+      font-family: lato, sans-serif;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 0 !important;
+      line-height: 28px;
     }
-    
-    .white>a {
-        color: white;
-        text-decoration: none;
+
+    .white > a {
+      color: white;
+      text-decoration: none;
     }
-    
-    .white>a:hover {
-        color: #00aeef;
+
+    .white > a:hover {
+      color: #00aeef;
     }
-    
+
     .logo {
-        position: relative;
-        text-align: center;
+      position: relative;
+      text-align: center;
     }
-    
+
     .modal-dialog {
-        height: 100%;
-        width: 100%;
-        margin: 0% !important;
-        border-radius: 17px !important;
+      height: 100%;
+      width: 100%;
+      margin: 0% !important;
+      border-radius: 17px !important;
     }
-    
+
     #material-icon {
-        display: block;
-        background-color: transparent;
-        color: white;
+      display: block;
+      background-color: transparent;
+      color: white;
     }
-    
+
     #material-icon:hover {
-        color: #00aeef;
+      color: #00aeef;
     }
-    
+
     button.close {
-        display: inline-block;
-        margin-left: 90%;
-        margin-top: 5%;
-        margin-right: 5%;
-        color: transparent;
+      display: inline-block;
+      margin-left: 90%;
+      margin-top: 5%;
+      margin-right: 5%;
+      color: transparent;
     }
-    
+
     button.close:hover {
-        color: #00aeef;
+      color: #00aeef;
     }
-    
+
     #exampleModalCenter {
-        padding-right: 0 !important;
+      padding-right: 0 !important;
     }
-    
+
     @media screen and (max-width: 480px) {
-        .modal-content {
-            font-size: 18px;
-        }
+      .modal-content {
+        font-size: 18px;
+      }
     }
-    
-    .modal-body>nav {
-        display: inline-block;
+
+    .modal-body > nav {
+      display: inline-block;
     }
     /* /modal */
-</style>
+  </style>
 
-<body>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark static-top" id="navhid">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="https://plusequalz.educationhost.cloud/wp/wp-content/uploads/2017/05/20210227_084745.png" alt="" width="75" height="75" />
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="modal" data-target="#exampleModalCenter" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar navbar-expand-lg navbar-dark static-top" id="navhid">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img
+              src="https://nationalmartialarts.in/wp-content/uploads/2017/05/20210227_084745.png"
+              alt=""
+              width="75"
+              height="75"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="material-icons text-white navbar-toggler"> menu</span>
           </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/">Home
-                  
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="navitem"
+                  href="https://nationalmartialarts.in/"
+                  >Home
                 </a>
-                            <li class="nav-item">
+                <!-- <li class="nav-item">
                                 <a class="nav-link" id="navitem" href="dashboard.php">Students Home</a>
-                            </li>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/about-studio/">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/classes-page/">Classes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/our-team/">Instructors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" id="navitem" href="#">Students</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/blog-excerpt/">Blogs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="navitem" href="https://nationalmartialarts.in/contacts/">Contacts</a>
-                        </li>
+                            </li> -->
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="navitem"
+                  href="https://nationalmartialarts.in/about-studio/"
+                  >About</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="navitem"
+                  href="https://nationalmartialarts.in/classes-page/"
+                  >Classes</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="navitem"
+                  href="https://nationalmartialarts.in/our-team/"
+                  >Instructors</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" id="navitem" href="#">Students</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="navitem"
+                  href="https://nationalmartialarts.in/blog-excerpt/"
+                  >Blogs</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="navitem"
+                  href="https://nationalmartialarts.in/contacts/"
+                  >Contacts</a
+                >
+              </li>
 
-                        <li class="nav-item">
-                            <!-- <li class="nav-item">
+              <li class="nav-item">
+                <!-- <li class="nav-item">
                             <!-- <a class="nav-link" href="#" id="navitem" onclick="signOut()">Signout</a> -->
-                            <!--<a href="logout.php?logout=true" class="nav-link">Logout</a>
+                <!--<a href="logout.php?logout=true" class="nav-link">Logout</a>
                         </li> -->
-                    </ul>
-                </div>
-            </div>
-        </nav>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <!-- search box -->
     <div class="flexbox">
-        <div class="search">
-            <h1>Search the Student</h1>
+      <div class="search">
+        <h1>Search the Student</h1>
 
-            <div id="searchdiv">
-                <input type="text" name="searchbar" id="search-bar" placeholder="Search" required />
-            </div>
-            <button class="btn btn-primary search-button" id="search">
+        <div id="searchdiv">
+          <input
+            type="text"
+            name="searchbar"
+            id="search-bar"
+            placeholder="Search"
+            required
+          />
+        </div>
+        <button class="btn btn-primary search-button" id="search">
           <i class="fa fa-search"></i></button
         ><a id="back" class="btn btn-warning form-btn" type="back"> Back </a>
       </div>
@@ -373,27 +439,34 @@
               close
             </span>
           </button>
-            <a href="https://plusequalz.educationhost.cloud/wp/" class="logo"><img src="https://plusequalz.educationhost.cloud/wp/wp-content/uploads/2021/03/oie_transparent.png" alt="" height="45px" width="auto" /></a>
-            <div class="modal-body">
-                <nav>
-                    <ul style="list-style-type: none" id="ul">
-                        <li class="white"><a href="">Home</a></li>
-                        <li class="white"><a href="">About</a></li>
-                        <li class="white"><a href="">Classes</a></li>
-                        <li class="white"><a href="">Instructors</a></li>
-                        <li class="white"><a href="">Students</a></li>
-                        <li class="white"><a href="">Blogs</a></li>
-                        <li class="white"><a href="">Contacts</a></li>
-                        <ul>
-                            <li>
-                                <a href=""></a><i class="fa fa-facebook" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                    </ul>
-                </nav>
-            </div>
+          <a href="https://nationalmartialarts.in/" class="logo"
+            ><img
+              src="https://nationalmartialarts.in/wp-content/uploads/2021/03/oie_transparent.png"
+              alt=""
+              height="45px"
+              width="auto"
+          /></a>
+          <div class="modal-body">
+            <nav>
+              <ul style="list-style-type: none" id="ul">
+                <li class="white"><a href="">Home</a></li>
+                <li class="white"><a href="">About</a></li>
+                <li class="white"><a href="">Classes</a></li>
+                <li class="white"><a href="">Instructors</a></li>
+                <li class="white"><a href="">Students</a></li>
+                <li class="white"><a href="">Blogs</a></li>
+                <li class="white"><a href="">Contacts</a></li>
+                <ul>
+                  <li>
+                    <a href=""></a
+                    ><i class="fa fa-facebook" aria-hidden="true"></i>
+                  </li>
+                </ul>
+              </ul>
+            </nav>
+          </div>
         </div>
-    </div>
+      </div>
     </div>
 
     <!-- script -->
@@ -410,50 +483,44 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-storage.js"></script>
     <script src="/assets/js/script.min.js"></script>
     <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyCmJCdJ5y8Px2gn7O6PTq_MxVx30Q4zZDM",
-            authDomain: "projecttkr-4aa57.firebaseapp.com",
-            projectId: "projecttkr-4aa57",
-            storageBucket: "projecttkr-4aa57.appspot.com",
-            messagingSenderId: "353303900963",
-            appId: "1:353303900963:web:6ee6c1e0a0e774c2851296",
-            measurementId: "G-12RFY7K0EN",
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
+      var firebaseConfig = {
+        apiKey: "AIzaSyCmJCdJ5y8Px2gn7O6PTq_MxVx30Q4zZDM",
+        authDomain: "projecttkr-4aa57.firebaseapp.com",
+        projectId: "projecttkr-4aa57",
+        storageBucket: "projecttkr-4aa57.appspot.com",
+        messagingSenderId: "353303900963",
+        appId: "1:353303900963:web:6ee6c1e0a0e774c2851296",
+        measurementId: "G-12RFY7K0EN",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
 
-        document.getElementById("search").addEventListener("click", function() {
-            // console.log("Hello World");
-            var Sid = document.getElementById("search-bar").value;
-            console.log(Sid);
-            firebase
-                .database()
-                .ref("Students/")
-                .orderByChild("Sid")
-                .equalTo(Sid)
-                .once("value")
-                .then(function(snapshot) {
-                    if (snapshot.exists()) {
-                        snapshot.forEach(function(childSnapshot) {
-                            // console.log(childSnapshot.key);
-                            var Stud = childSnapshot.key;
-                            window.location = "SingleStud.html?id=" + Stud;
-
-
-                        });
-                    } else {
-                        alert("in valid user");
-                    }
-
-                });
-
-
-        });
-        document.getElementById("back").addEventListener("click", function() {
-            window.location = "https://plusequalz.educationhost.cloud/wp";
-        });
+      document.getElementById("search").addEventListener("click", function () {
+        // console.log("Hello World");
+        var Sid = document.getElementById("search-bar").value;
+        console.log(Sid);
+        firebase
+          .database()
+          .ref("Students/")
+          .orderByChild("Sid")
+          .equalTo(Sid)
+          .once("value")
+          .then(function (snapshot) {
+            if (snapshot.exists()) {
+              snapshot.forEach(function (childSnapshot) {
+                // console.log(childSnapshot.key);
+                var Stud = childSnapshot.key;
+                window.location = "SingleStud.html?id=" + Stud;
+              });
+            } else {
+              alert("in valid user");
+            }
+          });
+      });
+      document.getElementById("back").addEventListener("click", function () {
+        window.location = "https://nationalmartialarts.in";
+      });
     </script>
-</body>
-
+  </body>
 </html>
